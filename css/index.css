@@ -43,6 +43,7 @@ nav .top .top_right li select {
 }
 nav .top .top_right li input {
   width: 300px;
+  text-indent: 5px;
 }
 nav .top .top_right li select {
   background-color: #F2FBFF;
@@ -90,6 +91,7 @@ nav .top .top_right li:nth-child(1) {
 .topics .topics_nav ul li .active {
   background-color: #0081CA;
 }
+/*轮播图*/
 .lunbotu {
   background-color: rgba(0, 255, 242, 0.1);
 }
@@ -169,7 +171,7 @@ nav .top .top_right li:nth-child(1) {
 .special .special_top .special_right .special_right_top .special_titles i,
 .special .special_top .special_right .special_right_bottom .special_titles i {
   display: inline-block;
-  width: 80px;
+  width: 50%;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -189,18 +191,25 @@ nav .top .top_right li:nth-child(1) {
 }
 .special .special_top2 ul {
   display: flex;
+  margin-bottom: 3px;
 }
 .special .special_top2 ul li {
   flex: 1;
   border: 1px solid #EFEFEF;
   padding: 5px;
   margin: 0 3px;
+  border-radius: 5px;
 }
 .special .special_top2 ul li a:hover {
   text-decoration: none;
 }
 .special .special_top2 ul li img {
   width: 100%;
+  border-radius: 5px;
+  transition: all 0.6s;
+}
+.special .special_top2 ul li img:hover {
+  transform: scale(1.1);
 }
 .special .special_top2 ul li h5 {
   color: #000;
@@ -220,6 +229,7 @@ nav .top .top_right li:nth-child(1) {
 .special .special_top2 ul li .here del {
   color: #ccc;
 }
+/*底部*/
 footer {
   background-color: #0094E8;
   margin-top: 120px;

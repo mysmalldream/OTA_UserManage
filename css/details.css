@@ -1,0 +1,177 @@
+/*页面顶部*/
+header {
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  line-height: 40px;
+  background-color: #FAFAFA;
+}
+header .center {
+  width: 80%;
+  margin: 0 auto;
+}
+header .center a {
+  color: #7D7D7D;
+}
+header .center a:hover {
+  color: red;
+}
+header .center .left li {
+  float: left;
+}
+header .center .right li {
+  float: left;
+}
+nav {
+  height: 60px;
+  margin: 20px 0;
+}
+nav .top {
+  width: 80%;
+  margin: 0 auto;
+}
+nav .top .top_right li {
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 42px;
+}
+nav .top .top_right li input,
+nav .top .top_right li select {
+  height: 39px;
+  float: left;
+  border-bottom: 1px solid #0094E8;
+}
+nav .top .top_right li input {
+  width: 300px;
+  text-indent: 5px;
+}
+nav .top .top_right li select {
+  background-color: #F2FBFF;
+}
+nav .top .top_right li button {
+  height: 39px;
+  float: left;
+  width: 80px;
+  background-color: #0094E8;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+nav .top .top_right li:nth-child(1) {
+  border: 2px solid #0094E8;
+}
+.topics {
+  background-color: #0094E8;
+}
+.topics .topics_nav {
+  width: 80%;
+  margin: 0 auto;
+}
+.topics .topics_nav ul {
+  display: flex;
+}
+.topics .topics_nav ul li {
+  float: left;
+  line-height: 40px;
+  flex: 1;
+  text-align: center;
+}
+.topics .topics_nav ul li a {
+  height: 40px;
+  display: inline-block;
+  color: #fff;
+  width: 100%;
+  text-decoration: none;
+}
+.topics .topics_nav ul li a:hover,
+.topics .topics_nav ul li a:active {
+  text-decoration: none;
+  background-color: #0081CA;
+}
+.topics .topics_nav ul li .active {
+  background-color: #0081CA;
+}
+/*更多景区*/
+.special {
+  margin-top: 20px;
+}
+.special .special_top2 {
+  width: 80%;
+  margin: 0 auto;
+}
+.special .special_top2 ul {
+  margin-bottom: 3px;
+}
+.special .special_top2 ul li {
+  display: flex;
+  border: 1px solid #EFEFEF;
+  padding: 1% 3% 1% 1%;
+  margin: 0 3px;
+  border-radius: 5px;
+  background-color: #FBFAFA;
+  margin-top: 5px;
+  border-bottom: 2px dashed #CECECE;
+  border-top: none;
+}
+.special .special_top2 ul li img {
+  flex: 1;
+  width: 20%;
+  height: 20%;
+  border-radius: 5px;
+}
+.special .special_top2 ul li .more_right {
+  flex: 3;
+  margin-left: 3%;
+}
+.special .special_top2 ul li .more_right .price {
+  font-size: 130%;
+  color: red;
+}
+.special .special_top2 ul li .more_right i {
+  margin: 0 10px;
+}
+.special .special_top2 ul li .more_right .yellow {
+  color: #F36B1E;
+  font-size: 50%;
+}
+.special .special_top2 ul li .more_right h3 {
+  margin-top: 3%;
+  color: #0094E8;
+}
+.special .special_top2 ul li .more_right p {
+  margin-top: 3%;
+  font-size: 18px;
+}
+.special .special_top2 ul li .more_right p .button-small {
+  font-size: 20px;
+  margin-top: 25%;
+}
+.special .special_top2 ul li .more_right .date {
+  margin-top: 3%;
+  font-size: 130%;
+}
+.special .special_top2 ul li .more_right .date .yellow {
+  font-size: 120%;
+}
+/*底部*/
+footer {
+  background-color: #0094E8;
+  margin-top: 120px;
+}
+footer .footer_center {
+  margin: 0 auto;
+  height: 100px;
+}
+footer .footer_center h5 {
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+}
+#up {
+  position: fixed;
+  z-index: 10000;
+  bottom: 50px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}

@@ -14,6 +14,8 @@ html,body{                 /*整个页面文字样式*/
 	font-family:"微软雅黑",Arail,Tabhoma;
     /*font-size: 12px;*/
     /*text-align: left;*/
+	width: 100%;
+	min-width: 1000px !important;
 }
 ul,ol{
 	list-style: none;       /*去掉前面的小圆点*/
