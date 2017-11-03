@@ -90,7 +90,7 @@ nav .top .top_right li:nth-child(1) {
 .topics .topics_nav ul li .active {
   background-color: #0081CA;
 }
-/*更多景区*/
+/*景区详情*/
 .special {
   margin-top: 20px;
 }
@@ -103,6 +103,63 @@ nav .top .top_right li:nth-child(1) {
 .special .special_top2 .order_right {
   flex: 1;
   border: 1px #000 solid;
+}
+.special .special_top2 #magnifier {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  padding: 1%;
+}
+.special .special_top2 .small-box {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.special .special_top2 .small-box img {
+  width: 100%;
+  height: 80%;
+  border-radius: 13px;
+}
+.special .special_top2 .thumbnail-box {
+  position: relative;
+  width: 100%;
+  flex: 1;
+}
+.special .special_top2 .thumbnail-box .btn {
+  position: absolute;
+  top: 50%;
+  width: 22px;
+  height: 32px;
+  margin-top: -16px;
+}
+.special .special_top2 .thumbnail-box .btn-prev {
+  left: 0;
+  background: url('../imgs/btn_prev.png') no-repeat;
+}
+.special .special_top2 .thumbnail-box .btn-next {
+  right: 0;
+  background: url('../imgs/btn_next.png') no-repeat;
+}
+.special .special_top2 .thumbnail-box .list {
+  overflow: hidden;
+  width: 390px;
+  margin: 0 auto;
+}
+.special .special_top2 .thumbnail-box .wrapper {
+  width: 100000px;
+}
+.special .special_top2 .thumbnail-box .wrapper img {
+  width: 58px;
+  height: 45px;
+}
+.special .special_top2 .thumbnail-box .list .item {
+  float: left;
+  margin: 0 10px;
+}
+.special .special_top2 .thumbnail-box .list .item img {
+  border: 2px solid #fff;
+}
+.special .special_top2 .thumbnail-box .list .item-cur img {
+  border: 2px solid #e53e41;
 }
 /*底部*/
 footer {
