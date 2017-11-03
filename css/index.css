@@ -1,16 +1,15 @@
 /*页面顶部*/
 header {
   height: 40px;
-  border-bottom: 1px solid #ccc;
   line-height: 40px;
-  background-color: #FAFAFA;
+  background-color: #7fbef5;
 }
 header .center {
   width: 80%;
   margin: 0 auto;
 }
 header .center a {
-  color: #7D7D7D;
+  color: #fff;
 }
 header .center a:hover {
   color: red;

@@ -19,7 +19,7 @@ $(function() {
           "</h3>" +
           "<p>景点: <i>"+data.data[i].viewName+"</i>" +
           '<span class="fr">' +
-          '<a href="####" class="button button-3d button-highlight button-pill button-small">预 定</a>' +
+          '<a href="./order.html" class="button button-3d button-highlight button-pill button-small">预 定</a>' +
           "</span>" +
           "</p>" +
           '<div class="date">出发日期: <span class="yellow">'+data.data[i].startTime+'</span>' +
@@ -27,7 +27,8 @@ $(function() {
           "</div>" +
           "</li>";
       }
-      $(".more").html(lis);
+      $(".more").html(lis)
+      // setInterval(function(){$(".more").html(lis);},3000)
     }
   });
 });

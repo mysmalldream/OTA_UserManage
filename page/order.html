@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品详情</title>
+    <link rel="shortcut icon" href="../imgs/ylt_favicon.ico" />
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="../lib/lunbotu/posterTvGrid.css">
+    <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="../lib/button/button.css">
+</head>
+<style>
+    #magnifier {
+        position: relative;
+        width: 100%;
+        flex: 1;
+        /* margin: 54px 0 0 70px; */
+        padding: 1%;
+    }
+
+    .small-box {
+        /* position: relative; */
+        width: 100%;
+        /* height: 450px; */
+        margin-bottom: 20px;
+
+        /* border: 1px solid #eee; */
+    }
+
+    .small-box img {
+        /* display: block; */
+        width: 100%;
+        height: 80%;
+        border-radius: 13px;
+
+    }
+
+    /* .small-box .hover {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #aaa;
+      background: #0099ff;
+      opacity: .5;
+      filter: alpha(opacity: 50);
+      cursor: move;
+    } */
+
+    .thumbnail-box {
+        position: relative;
+        width: 100%;
+        flex: 1;
+    }
+
+    .thumbnail-box .btn {
+        position: absolute;
+        top: 50%;
+        width: 22px;
+        height: 32px;
+        margin-top: -16px;
+    }
+
+    .thumbnail-box .btn-prev {
+        left: 0;
+        background: url(images/btn_prev.png) no-repeat;
+    }
+
+    .thumbnail-box .btn-next {
+        right: 0;
+        background: url(images/btn_next.png) no-repeat;
+    }
+
+    .thumbnail-box .list {
+        overflow: hidden;
+        width: 390px;
+        margin: 0 auto;
+    }
+
+    .thumbnail-box .wrapper {
+        width: 100000px;
+    }
+
+    .thumbnail-box .wrapper img {
+        width: 58px;
+        height: 45px;
+    }
+
+    .thumbnail-box .list .item {
+        float: left;
+        margin: 0 10px;
+    }
+
+    .thumbnail-box .list .item-cur {}
+
+    .thumbnail-box .list .item img {
+        border: 2px solid #fff;
+    }
+
+    .thumbnail-box .list .item-cur img {
+        border: 2px solid #e53e41;
+    }
+
+    /* .big-box {
+      display: none;
+      overflow: hidden;
+      position: absolute;
+      left: 451px;
+      top: 0;
+      width: 540px;
+      height: 540px;
+      border: 1px solid #e4e4e4;
+    }
+    .big-box img {
+      display: block;
+    } */
+</style>
+
+<body>
+    <!-- 顶部 -->
+    <header>
+        <div class="center clearfix">
+            <ul class="left fl">
+                <li>您好，欢迎来到易旅合创旅游网！</li>
+                <li>
+                    <a href="../page/login.html">登录</a> |&nbsp; </li>
+                <li>
+                    <a href="../page/register.html"> 注册</a>
+                </li>
+            </ul>
+            <ul class="right fr">
+                <li>
+                    <a href="">我的游记</a> |&nbsp;</li>
+                <li>
+                    <a href="">微信</a> |&nbsp;</li>
+                <li>
+                    <a href="">客户服务</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- logo以及搜索区 -->
+    <nav>
+        <div class="top">
+            <img class="fl" src="../imgs/logo.png" alt="">
+            <form action="">
+                <ul class="top_right fr">
+                    <li>
+                        <!-- <select name="" id="">
+                                        <option value="">所有产品</option>
+                                        <option value="">所有产品2</option>
+                                        <option value="">所有产品3</option>
+                                        <option value="">所有产品4</option>
+                                    </select> -->
+                        <input type="text" name="wer" placeholder="请输入产品ID、产品名称、目的地、景点">
+                        <button>
+                            <span class="glyphicon glyphicon-search"> </span> 搜 索</button>
+                    </li>
+                    <li>
+                        <img src="../imgs/serve.png" alt="">
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+    <div class="topics">
+        <div class="topics_nav">
+            <ul class="clearfix">
+                <li>
+                    <a class="active" href="../index.html">首页</a>
+                </li>
+                <li>
+                    <a href="javascript:;">景区介绍</a>
+                </li>
+                <li>
+                    <a href="javascript:;">周边旅游</a>
+                </li>
+                <li>
+                    <a href="javascript:;">帮助中心</a>
+                </li>
+                <li>
+                    <a href="javascript:;">平台公告</a>
+                </li>
+                <li>
+                    <a href="javascript:;">特供商品</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 更多景区 -->
+    <div class="special">
+        <div class="special_top2">
+            <div id="magnifier">
+                <div class="small-box">
+                    <img src="../imgs/big_1.jpg" alt="#">
+                    <!-- <span class="hover"></span> -->
+                </div>
+                <div class="thumbnail-box">
+                    <a href="javascript:;" class="btn btn-prev"></a>
+                    <a href="javascript:;" class="btn btn-next"></a>
+                    <div class="list">
+                        <ul class="wrapper">
+                            <li class="item item-cur" data-src="../imgs/big_1.jpg">
+                                <img src="../imgs/big_1.jpg" alt="#">
+                            </li>
+                            <li class="item" data-src="../imgs/big_2.jpg">
+                                <img src="../imgs/big_2.jpg" alt="#">
+                            </li>
+                            <li class="item" data-src="../imgs/big_3.jpg">
+                                <img src="../imgs/big_3.jpg" alt="#">
+                            </li>
+                            <li class="item" data-src="../imgs/big_4.jpg">
+                                <img src="../imgs/big_4.jpg" alt="#">
+                            </li>
+                            <li class="item" data-src="../imgs/big_5.jpg">
+                                <img src="../imgs/big_5.jpg" alt="#">
+                            </li>
+                            <li class="item" data-src="../imgs/big_6.jpg">
+                                <img src="../imgs/big_6.jpg" alt="#">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <div class="big-box">
+                  <img src="images/big_1.jpg" alt="#">
+                </div> -->
+            </div>
+            <div class="order_right fr">
+                123
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_center">
+            <h5>Copynight ©2017 西安陕西日报易旅通有限公司 yilvtong.com保留一切权利。客服热线:400-789-2000 陕ICP证140430号 陕ICP证14006215号</h5>
+        </div>
+    </footer>
+
+</body>
+<script src="../lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../lib/swiper/js/swiper.jquery.min.js"></script>
+<!-- <script src="../js/details.js"></script> -->
+<script src="../js/commonapi.js"></script>
+<script src="../lib/magnifier.js"></script>
+
+<script>
+    $(function () {
+
+        $('#magnifier').magnifier();
+
+    });
+</script>
+
+</html>

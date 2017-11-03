@@ -16,6 +16,17 @@ html,body{                 /*整个页面文字样式*/
     /*text-align: left;*/
 	width: 100%;
 	min-width: 1000px !important;
+	/* background:-webkit-gradient(linear, 0 0, to top right, from(#ff0000), to(rgba(0, 0, 255, 0.5))); */
+	/* background: linear-gradient(to right,rgba(225,44,88, 0.1) , blue);  */
+	background: linear-gradient(#7DC6FF, #fff); /* 标准的语法 */
+	background: -webkit-linear-gradient(#7DC6FF, #fff); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#7DC6FF, #fff); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(#7DC6FF, #fff); /* Firefox 3.6 - 15 */
+	/* background-color:rgb(251, 252, 250); 
+	background: url('../imgs/bgc.jpg');
+	background-attachment: fixed;
+	background-image: 100%;
+	background-repeat:repeat-x; */
 }
 ul,ol{
 	list-style: none;       /*去掉前面的小圆点*/
