@@ -14,8 +14,16 @@ header .center a {
 header .center a:hover {
   color: red;
 }
+header .center .left {
+  line-height: 40px;
+  font-size: 14px;
+}
 header .center .left li {
   float: left;
+}
+header .center .right {
+  line-height: 40px;
+  font-size: 14px;
 }
 header .center .right li {
   float: left;
@@ -27,6 +35,7 @@ nav {
 nav .top {
   width: 80%;
   margin: 0 auto;
+  margin-top: 20px;
 }
 nav .top .top_right li {
   float: left;
@@ -61,6 +70,7 @@ nav .top .top_right li:nth-child(1) {
 }
 .topics {
   background-color: #0094E8;
+  margin-top: 30px;
 }
 .topics .topics_nav {
   width: 80%;
@@ -90,19 +100,100 @@ nav .top .top_right li:nth-child(1) {
 .topics .topics_nav ul li .active {
   background-color: #0081CA;
 }
-/*景区详情*/
+/*更多景区*/
 .special {
-  margin-top: 20px;
+  margin-top: 10px;
 }
+.special .special_top3 {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 1% 0 1%;
+}
+.special .special_top3 p span {
+  color: red;
+}
+.special .special_top3 h3 {
+  margin: 1% 0 0 0;
+  color: #000;
+  font-size: 2rem;
+}
+/*景区价格*/
 .special .special_top2 {
   width: 80%;
   margin: 0 auto;
-  border: 1px solid red;
   display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  /*产品详情图片*/
 }
 .special .special_top2 .order_right {
   flex: 1;
-  border: 1px #000 solid;
+  padding: 1%;
+}
+.special .special_top2 .order_right .price_top {
+  margin-bottom: 5px;
+}
+.special .special_top2 .order_right .price_top h3,
+.special .special_top2 .order_right .price_top h4 {
+  margin-top: 4%;
+}
+.special .special_top2 .order_right .price_top em,
+.special .special_top2 .order_right .price_top del {
+  color: #929190;
+}
+.special .special_top2 .order_right .price_top > span,
+.special .special_top2 .order_right .price_top .yell {
+  color: #F36B1E;
+  font-size: 35px;
+}
+.special .special_top2 .order_right .price_top .yuan {
+  margin: 5% 0;
+}
+.special .special_top2 .order_right .price_bottom {
+  border-radius: 5px;
+  /*提交订单*/
+}
+.special .special_top2 .order_right .price_bottom .spinner {
+  display: inline-block;
+}
+.special .special_top2 .order_right .price_bottom em {
+  color: #929190;
+}
+.special .special_top2 .order_right .price_bottom .people {
+  margin: 10% 0;
+}
+.special .special_top2 .order_right .price_bottom .once {
+  display: inline-block;
+}
+.special .special_top2 .order_right .price_bottom .tijiaoOrder input {
+  border: 1px solid #ccc;
+}
+.special .special_top2 .order_right .price_bottom .modal-footer {
+  text-align: center;
+}
+.special .special_top2 .order_right .price_bottom .agree {
+  border-radius: 5px;
+  border: 1px solid #5EB7FF;
+  display: inline-block;
+  width: 100px;
+  height: 15%;
+  text-align: center;
+  margin-right: 10%;
+}
+.special .special_top2 .order_right .price_bottom .agree .custom {
+  background-color: #5EB7FF;
+  color: #fff;
+  line-height: 40px;
+}
+.special .special_top2 .order_right .price_bottom .agree h1 {
+  line-height: 45px;
+  font-size: 30px;
+  color: #F36B1E;
+}
+.special .special_top2 .order_right .price_bottom .agree p {
+  border-top: 1px solid #5EB7FF;
+  line-height: 25px;
+  color: #ccc;
 }
 .special .special_top2 #magnifier {
   position: relative;
@@ -160,6 +251,67 @@ nav .top .top_right li:nth-child(1) {
 }
 .special .special_top2 .thumbnail-box .list .item-cur img {
   border: 2px solid #e53e41;
+}
+/*推荐理由*/
+.special .special_top4 {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding: 1%;
+  background-color: #fff;
+}
+.special .special_top4 i,
+.special .special_top4 span {
+  color: #5DBAFC;
+  font-size: 20px;
+}
+.special .special_top4 .excuse {
+  line-height: 40px;
+  border-top: 1px solid #5DBAFC;
+  margin-top: 5px;
+}
+.special .special_top4 .excuse li {
+  padding: 0 2%;
+  line-height: 40px;
+  color: rgba(126, 113, 113, 0.678);
+}
+.special .special_top4 .flow {
+  display: flex;
+  border-top: 1px solid #5DBAFC;
+  margin-top: 5px;
+}
+.special .special_top4 .flow li {
+  flex: 1;
+  color: rgba(126, 113, 113, 0.678);
+}
+.special .special_top4 .flow li .flow_top {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #5DBAFC;
+  border-radius: 50%;
+  line-height: 60px;
+  margin: 10px auto;
+  text-align: center;
+}
+.special .special_top4 .flow li .flow_top i {
+  color: red;
+}
+.special .special_top4 .flow li .product {
+  text-align: center;
+  margin-top: 5%;
+}
+.special .special_top4 .flow li p {
+  margin: 5% 10% 0 10%;
+  line-height: 30px;
+}
+.special .special_top4 .views {
+  border-top: 1px solid #5DBAFC;
+  margin-top: 5px;
+}
+.special .special_top4 .views li {
+  padding: 0 2%;
+  line-height: 40px;
+  color: rgba(126, 113, 113, 0.678);
 }
 /*底部*/
 footer {

@@ -16,11 +16,15 @@
                 color: red;
             }
             .left {
+                line-height: 40px;
+                font-size: 14px;
                 li {
                     float: left;
                 }
             }
             .right {
+                line-height: 40px;
+                font-size: 14px;
                 li {
                     float: left;
                 }
@@ -34,6 +38,7 @@
         .top {
             width: 80%;
             margin: 0 auto;
+            margin-top: 20px;
             .top_right {
                 li {
                     float: left;
@@ -73,6 +78,7 @@
 
     .topics {
         background-color: @color2;
+        margin-top: 30px;
         .topics_nav {
             width: 80%;
             margin: 0 auto;
@@ -102,20 +108,107 @@
             }
         }
     }
-    /*景区详情*/
+    /*更多景区*/
 
     .special {
-        margin-top: 20px;
+        margin-top: 10px;
+        .special_top3 {
+            width: 80%;
+            margin: 0 auto;
+            padding: 0 1% 0 1%; // border: 1px solid #000;
+            p {
+                span {
+                    color: red;
+                }
+            }
+            h3 {
+                margin: 1% 0 0 0;
+                color: #000;
+                font-size: 2rem;
+            }
+        }
+    }
+
+    /*景区价格*/
+    .special {
         .special_top2 {
             width: 80%;
             margin: 0 auto;
-            border: 1px solid red;
             display: flex;
+            background-color: #fff;
+            border-radius: 10px;
             .order_right {
                 flex: 1;
-                border: 1px #000 solid; // position: relative;
-                // top: -80%;
+                padding: 1%;
+                .price_top {
+                    margin-bottom: 5px;
+                    h3,
+                    h4 {
+                        margin-top: 4%;
+                    }
+                    em,
+                    del {
+                        color: #929190;
+                    }
+                    >span,
+                    .yell {
+                        color: @color3;
+                        font-size: 35px;
+                    }
+                    .yuan {
+                        margin: 5% 0;
+                    }
+                }
+                .price_bottom {
+                    border-radius: 5px;
+                    .spinner {
+                        display: inline-block;
+                    }
+                    em {
+                        color: #929190;
+                    }
+                    .people {
+                        margin: 10% 0;
+                    }
+                    .once{
+                        display: inline-block;
+                    }
+                    /*提交订单*/
+                    .tijiaoOrder {
+                        input {
+                            border: 1px solid #ccc;
+                        }
+                    }
+                    .modal-footer {
+                        text-align: center;
+                    }
+                    .agree{
+                        border-radius: 5px;
+                        border: 1px solid #5EB7FF;
+                        display: inline-block;
+                        width: 100px;
+                        height: 15%;
+                        text-align: center;
+                        margin-right: 10%;
+                        .custom{
+                            background-color: #5EB7FF;
+                            color: #fff;
+                            line-height: 40px;  
+                        }
+                        h1{
+                            line-height: 45px;  
+                            font-size: 30px;
+                            color:@color3;
+                        }
+                        p{
+                            border-top: 1px solid #5EB7FF;
+                            line-height: 25px;  
+                            color: #ccc;
+                        }
+                    }
+                }
             }
+            /*产品详情图片*/
             #magnifier {
                 position: relative;
                 width: 100%;
@@ -173,6 +266,71 @@
             }
             .thumbnail-box .list .item-cur img {
                 border: 2px solid #e53e41;
+            }
+        }
+    }
+    /*推荐理由*/
+
+    .special {
+        .special_top4 {
+            width: 80%;
+            margin: 0 auto; // border: 2px dashed @color3;
+            border-radius: 6px;
+            padding: 1%;
+            background-color: #fff;
+            i,
+            span {
+                color: #5DBAFC;
+                font-size: 20px;
+            }
+            .excuse {
+                line-height: 40px;
+                border-top: 1px solid #5DBAFC;
+                margin-top: 5px;
+                li {
+                    padding: 0 2%;
+                    line-height: 40px;
+                    color: rgba(126, 113, 113, 0.678);
+                }
+            }
+            .flow {
+                display: flex;
+                border-top: 1px solid #5DBAFC;
+                margin-top: 5px;
+                li {
+                    flex: 1;
+                    color: rgba(126, 113, 113, 0.678);
+                    .flow_top {
+                        width: 60px;
+                        height: 60px;
+                        border: 2px solid #5DBAFC;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 60px;
+                        margin: 10px auto;
+                        text-align: center;
+                        i {
+                            color: red;
+                        }
+                    }
+                    .product {
+                        text-align: center;
+                        margin-top: 5%;
+                    }
+                    p {
+                        margin: 5% 10% 0 10%;
+                        line-height: 30px;
+                    }
+                }
+            }
+            .views {
+                border-top: 1px solid #5DBAFC;
+                margin-top: 5px;
+                li {
+                    padding: 0 2%;
+                    line-height: 40px;
+                    color: rgba(126, 113, 113, 0.678);
+                }
             }
         }
     }
