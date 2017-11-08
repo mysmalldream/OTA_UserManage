@@ -1,4 +1,12 @@
 // 产品详情页
+function GetQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]);
+  return null;
+}
+// console.log(GetQueryString("id"));
+
 $(function() {
   $("#magnifier").magnifier(); //产品图片
   $(".spinnerExample").spinner({}); //预定人数
@@ -51,24 +59,51 @@ $(function() {
       { date: "2017-12-04", data: "124" }
     ]
   });
-  $(".watch").on('click',function(){
-    getActive()
-    
-  })
-  $(".zhifubao").on('click',function(){
-    getActive()
-    console.log($('.spinnerExample').val())
-  })
-  
+  $(".watch").on("click", function() {
+    getActive();
+  });
+  $(".zhifubao").on("click", function() {
+    getActive();
+  });
+
   function getActive() {
     var data = $(".calendar-box").calendarGetActive();
     console.log(data);
-    $('#riqi').html(data.date)
+    $(".riqi").html(data.date);
   }
   //客户满意度
-  $('.agree>h1>i').html(Math.floor(Math.random()*10)+90)
-  $('.agree>p>span').html(Math.floor(Math.random()*100)+20)
+  $(".agree>h1>i").html(Math.floor(Math.random() * 10) + 90);
+  $(".agree>p>span").html(Math.floor(Math.random() * 100) + 20);
 
+  // 产品详细数据
+  $.ajax({
+    type: "get",
+    url: common_api + "/user/detailPro.action?id=" + GetQueryString("id"),
+    dataType: "json",
+    success: function(data) {
+      console.log(data.data);
+      var lis = "";
+      // for (var i = 0; i < data.data.images.length; i++) {
 
-
+      lis +=
+        '<div class="item active">' +
+        "<img src=" +
+        data.data.images[0].url +
+        ' alt="...">' +
+        "</div>" +
+        '<div class="item">' +
+        "<img src=" +
+        data.data.images[1].url +
+        ' alt="...">' +
+        "</div>" +
+        '<div class="item">' +
+        "<img src=" +
+        data.data.images[2].url +
+        ' alt="...">' +
+        "</div>";
+      // }
+      $(".carousel-inner").html(lis);
+      $(".carousel").carousel({ interval: 1500 });
+    }
+  });
 });

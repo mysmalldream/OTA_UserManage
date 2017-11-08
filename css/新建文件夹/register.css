@@ -1,4 +1,3 @@
-/*登录页*/
 .login {
   width: 902px;
   margin: 50px auto;
@@ -30,14 +29,14 @@
   width: 300px;
   height: 200px;
 }
+.login .center .right .form .btns {
+  margin: 0px 0 0 10px !important;
+}
 .login .center .right .form .form-group {
   margin-top: 30px;
 }
 .login .center .right .form .form-group .input-group {
   margin-bottom: 10px;
-}
-.login .center .right .form .forget {
-  margin-left: 140px;
 }
 .login .center .right .form .shuru .yanzhengma {
   width: 35%;
@@ -47,6 +46,9 @@
   display: inline-block;
   margin-left: 10px;
   margin-right: 15px;
+}
+.login .center .right .form .shuru1 {
+  margin: 10px 0;
 }
 .login .center .right .form .btn {
   margin-top: 10px;

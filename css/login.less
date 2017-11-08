@@ -1,62 +1,101 @@
+/*注册选择页*/
+
 @color1: #0094E8; //页面主色调
+//logo 区
+.logoTip {
+    width: 100%;
+    margin: 50px auto;
+    height: 100%;
+    border-bottom: 2px solid #5C9DE9;
+    .logo {
+        width: 80%;
+        margin: 0 auto;
+        height: 80px; 
+    }
+}
+
 .login {
     width: 902px;
     margin: 50px auto;
-    height: 500px; 
+    height: 100%;
     .center {
         height: 550px;
         width: 100%;
         margin: 0 auto;
+        display: flex;
         .left {
-            img {
-                width: 440px;
-                height: 500px;
+            border: 1px solid #E8E8E8;
+            height: 70%;
+            flex: 1;
+            margin-right: 10px;
+            p {
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                background-color: #F47A00;
+                color: #fff;
+                font-size: 22px;
+            }
+            .should {
+                margin-left: 3%;
+                height: 50px;
+                line-height: 50px;
+                font-size: 16px;
+            }
+            ul {
+                padding: 0% 5% 5% 5%;
+                li {
+                    height: 40px;
+                    line-height: 40px;
+                    list-style: none;
+                    color: #909090;
+                }
+            }
+            .btn {
+                margin-left: 30%;
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                }
             }
         }
         .right {
-            margin: 90px 0 0 100px;
-            display: inline-block;
-            .topics {
-                b {
-                    color: @color1;
-                    font-size: 20px;
-                }
-                span {
-                    color: @color1;
-                    margin-left: 60px;
-                    margin-right: 20px;
+            border: 1px solid #E8E8E8;
+            height: 70%;
+            flex: 1;
+            p {
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                background-color: #59A3EB;
+                color: #fff;
+                font-size: 22px;
+            }
+            .should {
+                margin-left: 3%;
+                height: 50px;
+                line-height: 50px;
+                font-size: 16px;
+            }
+            ul {
+                padding: 0% 5% 5% 5%;
+                li {
+                    height: 40px;
+                    line-height: 40px;
+                    list-style: none;
+                    color: #909090;
                 }
             }
-            .form {
-                width: 300px;
-                height: 200px;
-                .form-group {
-                    margin-top: 30px;
-                    .input-group {
-                        margin-bottom: 10px;
-                    }
-                }
-                .forget {
-                    margin-left: 140px;
-                }
-                .shuru {
-                    .yanzhengma {
-                        width: 35%;
-                        display: inline-block;
-                    }
-                    .tupian {
-                        display: inline-block;
-                        margin-left: 10px;
-                        margin-right: 15px;
-                    }
-                }
-                .btn {
-                    margin-top: 10px;
+            .btn {
+                margin-left: 30%;
+                a{
+                    text-decoration: none;
+                    color: #fff;
                 }
             }
         }
     }
     p {
-        color: #A1A1A1;
+        color: #909090;
     }
 }

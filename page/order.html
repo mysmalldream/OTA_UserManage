@@ -101,9 +101,29 @@
         <div class="special_top2">
             <div id="magnifier">
                 <div class="small-box">
-                    <img src="../imgs/big_1.jpg" alt="#">
+                    <!-- <img src="../imgs/big_1.jpg" alt="#"> -->
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <!-- <div class="item active">
+                                <img src="../imgs/big_1.jpg" alt="...">
+                            </div>
+                            <div class="item">
+                                <img src="../imgs/big_2.jpg" alt="...">
+                            </div> -->
+                        </div>
+                    
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="thumbnail-box">
+                <!-- <div class="thumbnail-box">
                     <a href="javascript:;" class="btn btn-prev"></a>
                     <a href="javascript:;" class="btn btn-next"></a>
                     <div class="list">
@@ -120,15 +140,9 @@
                             <li class="item" data-src="../imgs/big_4.jpg">
                                 <img src="../imgs/big_4.jpg" alt="#">
                             </li>
-                            <li class="item" data-src="../imgs/big_5.jpg">
-                                <img src="../imgs/big_5.jpg" alt="#">
-                            </li>
-                            <li class="item" data-src="../imgs/big_6.jpg">
-                                <img src="../imgs/big_6.jpg" alt="#">
-                            </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="order_right fr">
                 <div class="price_top">
@@ -145,164 +159,171 @@
                         <em>出 发 日 期 :</em>
                         <a href="javascript:;" class="button button-tiny button-action button-pill select">---请选择---</a>
                         <a href="javascript:;" class="watch button button-pill button-tiny">查看出发日期</a>您的出发日期为:
-                        <span id="riqi"></span>
+                        <span class="riqi"></span>
                     </h4>
                     <div class="calendar-box demo-box"></div>
-                </h4>
-                <div class="price_bottom">
-                    <h4 class="people">
-                        <em>预 定 人 数 :</em>
-                        <input type="text" class="spinnerExample" />
-                        <em>人</em>
                     </h4>
-                    <h4 class="once">
-                        <a href="##" data-toggle="modal" data-target="#myModal" class="zhifubao button button-glow button-border button-rounded button-primary">立即预定</a>
-
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <h4 class="modal-title" id="myModalLabel">填写订单</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="" class="tijiaoOrder">
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="control-label">姓名:</label>
-                                                <input type="text" class="form-control" id="recipient-name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="message-text" class="control-label">手机号码:</label>
-                                                <input type="number" class="form-control" id="recipient-name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="message-text" class="control-label">身份证号码:</label>
-                                                <input type="text" class="form-control" id="recipient-name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="message-text" class="control-label">备注:</label>
-                                                <textarea class="form-control" id="message-text"></textarea>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> -->
-                                        <!-- <button type="button" class="btn btn-primary">提交订单</button> -->
-                                        <a href="javascript:;" class="button button-primary  button-pill ">支付宝支付</a>
-                                        <a href="javascript:;" class="button button-action button-pill">微信支付</a>
+                    <div class="price_bottom">
+                        <h4 class="people">
+                            <em>预 定 人 数 :</em>
+                            <input type="text" class="spinnerExample" />
+                            <em>人</em>
+                        </h4>
+                        <h4 class="once">
+                            <a href="##" data-toggle="modal" data-target="#myModal" class="zhifubao button button-glow button-border button-rounded button-primary">立即预定</a>
+                            <!-- 弹窗 -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel">填写订单</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="" class="tijiaoOrder">
+                                                <!-- 您的出发日期为:<a href="javascript:;" class="riqi button button-rounded button-tiny"></a><span class="button button-rounded button-tiny riqi"></span> -->
+                                                <div class="form-group">
+                                                    <label for="recipient-name" class="control-label">您的出发日期为:</label>
+                                                    <div data-dismiss="modal" class="button button-rounded button-tiny riqi">请返回选择</div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="recipient-name" class="control-label">姓名:</label>
+                                                    <input type="text" class="form-control" id="recipient-name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message-text" class="control-label">手机号码:</label>
+                                                    <input type="number" class="form-control" id="recipient-name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message-text" class="control-label">身份证号码:</label>
+                                                    <input type="text" class="form-control" id="recipient-name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message-text" class="control-label">备注:</label>
+                                                    <textarea class="form-control" id="message-text"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> -->
+                                            <!-- <button type="button" class="btn btn-primary">提交订单</button> -->
+                                            <a href="javascript:;" class="button button-primary  button-pill ">支付宝支付</a>
+                                            <a href="javascript:;" class="button button-action button-pill">微信支付</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </h4>
+                        <div class="agree fr">
+                            <div class="custom">客户满意度</div>
+                            <h1>
+                                <i>99</i>%</h1>
+                            <p>
+                                <span>66</span>人点赞</p>
                         </div>
-                    </h4>
-                    <div class="agree fr">
-                        <div class="custom">客户满意度</div>
-                        <h1><i>99</i>%</h1>
-                        <p><span>66</span>人点赞</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- 推荐理由 -->
-    <div class="special">
-        <div class="special_top4">
-            <i class="glyphicon glyphicon-forward"></i>
-            <span>推荐理由</span>
-            <ul class="excuse">
-                <li>1.我们专业的团队为您提供周全的服务,让您安心出游;</li>
-                <li>2.根据您所需的行程安排和旅游目的地,让您拥有更好的旅游体验;</li>
-            </ul>
-            <i class="glyphicon glyphicon-flag"></i>
-            <span>预订流程</span>
-            <ul class="flow">
-                <li class="">
-                    <div class="flow_top">
-                        <i class="glyphicon glyphicon-ok"></i>
-                    </div>
-                    <div class="product">1、选择产品</div>
-                    <p>在景区介绍旅游频道选择您心仪的旅游线路,查看产品详情;</p>
-                </li>
-                <li class="">
-                    <div class="flow_top">
-                        <i class="glyphicon glyphicon-pencil"></i>
-                    </div>
-                    <div class="product">2、搭配资源</div>
-                    <p>点击"立即预定",选择出行人数等信息;</p>
-                </li>
-                <li class="">
-                    <div class="flow_top">
-                        <i class="glyphicon glyphicon-music"></i>
-                    </div>
-                    <div class="product">3、填写信息</div>
-                    <p>核对行程信息,正确填写联系人确认预订条款;</p>
-                </li>
-                <li class="">
-                    <div class="flow_top">
-                        <i class="glyphicon glyphicon-star-empty"></i>
-                    </div>
-                    <div class="product">4、开始支付</div>
-                    <p>选择适合您的付款方式,点击提交订单按钮;</p>
-                </li>
-                <li class="">
-                    <div class="flow_top">
-                        <i class="glyphicon glyphicon-time"></i>
-                    </div>
-                    <div class="product">5、订单确认</div>
-                    <p>支付成功后,手机会受到相应的订单信息;</p>
-                </li>
-                <li class="">
-                    <div class="flow_top">
-                        <i class="glyphicon glyphicon-repeat"></i>
-                    </div>
-                    <div class="product">6、开始旅程</div>
-                    <p>按照出行日期开始您的美好行程;</p>
-                </li>
-            </ul>
-            <i class="glyphicon glyphicon-glass"></i>
-            <span>景点介绍</span>
-            <ul class="views">
-                <li class="">
-                   1
-                </li>
-                <li class="">
-                   2
-                </li>
-               
-            </ul>
-            <i class="glyphicon glyphicon-road"></i>
-            <span>费用说明</span>
-            <ul class="views">
-                <li class="">
-                   1
-                </li>
-                <li class="">
-                   2
-                </li>
-                
-            </ul>
-            <i class="glyphicon glyphicon-tags"></i>
-            <span>预订须知</span>
-            <ul class="views">
-                <li class="">
-                    旅行者违约,在行程前解除合同的,必要的费用应当扣除.
-                </li>
-            </ul>
+        <!-- 推荐理由 -->
+        <div class="special">
+            <div class="special_top4">
+                <i class="glyphicon glyphicon-forward"></i>
+                <span>推荐理由</span>
+                <ul class="excuse">
+                    <li>1.我们专业的团队为您提供周全的服务,让您安心出游;</li>
+                    <li>2.根据您所需的行程安排和旅游目的地,让您拥有更好的旅游体验;</li>
+                </ul>
+                <i class="glyphicon glyphicon-flag"></i>
+                <span>预订流程</span>
+                <ul class="flow">
+                    <li class="">
+                        <div class="flow_top">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </div>
+                        <div class="product">1、选择产品</div>
+                        <p>在景区介绍旅游频道选择您心仪的旅游线路,查看产品详情;</p>
+                    </li>
+                    <li class="">
+                        <div class="flow_top">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </div>
+                        <div class="product">2、搭配资源</div>
+                        <p>点击"立即预定",选择出行人数等信息;</p>
+                    </li>
+                    <li class="">
+                        <div class="flow_top">
+                            <i class="glyphicon glyphicon-music"></i>
+                        </div>
+                        <div class="product">3、填写信息</div>
+                        <p>核对行程信息,正确填写联系人确认预订条款;</p>
+                    </li>
+                    <li class="">
+                        <div class="flow_top">
+                            <i class="glyphicon glyphicon-star-empty"></i>
+                        </div>
+                        <div class="product">4、开始支付</div>
+                        <p>选择适合您的付款方式,点击提交订单按钮;</p>
+                    </li>
+                    <li class="">
+                        <div class="flow_top">
+                            <i class="glyphicon glyphicon-time"></i>
+                        </div>
+                        <div class="product">5、订单确认</div>
+                        <p>支付成功后,手机会受到相应的订单信息;</p>
+                    </li>
+                    <li class="">
+                        <div class="flow_top">
+                            <i class="glyphicon glyphicon-repeat"></i>
+                        </div>
+                        <div class="product">6、开始旅程</div>
+                        <p>按照出行日期开始您的美好行程;</p>
+                    </li>
+                </ul>
+                <i class="glyphicon glyphicon-glass"></i>
+                <span>景点介绍</span>
+                <ul class="views">
+                    <li class="">
+                        1
+                    </li>
+                    <li class="">
+                        2
+                    </li>
+
+                </ul>
+                <i class="glyphicon glyphicon-road"></i>
+                <span>费用说明</span>
+                <ul class="views">
+                    <li class="">
+                        1
+                    </li>
+                    <li class="">
+                        2
+                    </li>
+
+                </ul>
+                <i class="glyphicon glyphicon-tags"></i>
+                <span>预订须知</span>
+                <ul class="views">
+                    <li class="">
+                        旅行者违约,在行程前解除合同的,必要的费用应当扣除.
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <footer>
-        <div class="footer_center">
-            <h5>Copynight ©2017 西安陕西日报易旅通有限公司 yilvtong.com保留一切权利。客服热线:400-789-2000 陕ICP证140430号 陕ICP证14006215号</h5>
-        </div>
-    </footer>
+        <footer>
+            <div class="footer_center">
+                <h5>Copynight ©2017 西安陕西日报易旅通有限公司 yilvtong.com保留一切权利。客服热线:400-789-2000 陕ICP证140430号 陕ICP证14006215号</h5>
+            </div>
+        </footer>
 
 </body>
 <script src="../lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
 <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="../lib/swiper/js/swiper.jquery.min.js"></script>
-<script src="../lib/magnifier.js"></script>
+<script src="../lib/magnifier.js"></script>    
 <script src="../lib/number/js/jquery.spinner.js"></script>
 <script src="../lib/calendar/js/calendar-pro.js"></script>
 <script src="../js/order.js"></script>

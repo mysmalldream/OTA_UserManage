@@ -7,7 +7,7 @@ $(function(jq) {
     url: common_api + "/user/scope.action",
     dataType: "json",
     success: function(data) {
-      //   console.log(data);
+      // console.log(data);
       imgs = data.data[0].images;
       var posterTvGrid = function(o, options, data) {
         this.parent = jq("#" + o);
@@ -607,16 +607,18 @@ $(function(jq) {
   //   特别推荐
   $.ajax({
     type: "get",
-    url: common_api + "/user/expeciallyProduct.action",
+    url: common_api + "/user/expeciallyView.action",
     dataType: "json",
     success: function(data) {
       var special_left, special_center, special_right_top, special_right_bottom;
-      //   console.log(data);
-      //   console.log(data.data[0]);
+      // console.log(data.data);
+      // console.log(data.data[0].id);
       special_left =
-        '<a href="###">' +
+        "<a href=./details.html?id=" +
+        data.data[0].id +
+        ">" +
         "<img src=" +
-        data.data[0].images[0].url +
+        data.data[0].pic[0] +
         " title=" +
         data.data[0].name +
         ">" +
@@ -626,17 +628,19 @@ $(function(jq) {
         data.data[0].name +
         "</i>" +
         "</span>" +
-        '<b class="fr">￥' +
-        "<em>" +
-        data.data[0].salePrice +
-        "</em>元/人</b>" +
+        // '<b class="fr">￥' +
+        // "<em>" +
+        // data.data[0].salePrice +
+        // "</em>元/人</b>" +
         "</div>" +
         "</a>";
       $(".special_left").html(special_left);
       special_center =
-        '<a href="###">' +
+        "<a href=./details.html?id=" +
+        data.data[1].id +
+        ">" +
         "<img src=" +
-        data.data[1].images[2].url +
+        data.data[1].pic[1] +
         " title=" +
         data.data[1].name +
         ">" +
@@ -646,50 +650,54 @@ $(function(jq) {
         data.data[1].name +
         "</i>" +
         "</span>" +
-        '<b class="fr">￥' +
-        "<em>" +
-        data.data[1].salePrice +
-        "</em>元/人</b>" +
+        // '<b class="fr">￥' +
+        // "<em>" +
+        // data.data[1].salePrice +
+        // "</em>元/人</b>" +
         "</div>" +
         "</a>";
       $(".special_center").html(special_center);
       special_right_top =
-        '<a href="">' +
+        "<a href=./details.html?id=" +
+        data.data[2].id +
+        ">" +
         "<img src=" +
-        data.data[1].images[3].url +
+        data.data[2].pic[2] +
         "  title=" +
-        data.data[1].name +
+        data.data[2].name +
         ">" +
         '<div class="special_titles">' +
         "<span>" +
         "<i>" +
-        data.data[1].name +
+        data.data[2].name +
         "</i>" +
         "</span>" +
-        '<b class="fr">￥' +
-        "<em>" +
-        data.data[1].salePrice +
-        "</em>元/人</b>" +
+        // '<b class="fr">￥' +
+        // "<em>" +
+        // data.data[2].salePrice +
+        // "</em>元/人</b>" +
         "</div>" +
         "</a>";
       $(".special_right_top").html(special_right_top);
       special_right_bottom =
-        '<a href="">' +
+        "<a href=./details.html?id=" +
+        data.data[3].id +
+        ">" +
         "<img src=" +
-        data.data[1].images[4].url +
+        data.data[3].pic[3] +
         "  title=" +
-        data.data[1].name +
+        data.data[3].name +
         ">" +
         '<div class="special_titles">' +
         "<span>" +
         "<i>" +
-        data.data[1].name +
+        data.data[3].name +
         "</i>" +
         "</span>" +
-        '<b class="fr">￥' +
-        "<em>" +
-        data.data[1].salePrice +
-        "</em>元/人</b>" +
+        // '<b class="fr">￥' +
+        // "<em>" +
+        // data.data[3].salePrice +
+        // "</em>元/人</b>" +
         "</div>" +
         "</a>";
       $(".special_right_bottom").html(special_right_bottom);
@@ -698,178 +706,98 @@ $(function(jq) {
   //   景点游
   $.ajax({
     type: "get",
-    url: common_api + "/user/viewTraval.action",
+    url: common_api + "/user/viewTravalView.action",
     dataType: "json",
     success: function(data) {
+      // console.log(data.data)
       var viewTraval_top='',
         viewTraval_bottom='';
-    //   console.log(data.data);
       for (var i = 0; i < 4; i++) {
         // console.log(data.data[i])
-        // console.log(data.data[0].name)
-        // console.log(data.data[0].salePrice)
-        // console.log(data.data[0].marketPrice)
-        // console.log(data.data[0].images[0].url)
         viewTraval_top +=
           "<li>" +
-          '<a href="javascript:;">' +
-          "<img src=" +data.data[i].images[0].url +' title='+data.data[i].name+'>' +
+          "<a href=./details.html?id=" +
+          data.data[i].id +
+          ">" +
+          "<img src=" +data.data[i].pic[0] +' title='+data.data[i].name+'>' +
           "<h5>"+data.data[i].name+"</h5>" +
-          '<div class="here">' +
-          "<span>易旅价：" +
-          "<b>￥" +
-          "<i>"+data.data[i].salePrice+"</i>/人</b>" +
-          "</span>" +
-          '<del class="fr">￥' +
-          "<i>"+data.data[i].marketPrice+"</i>/人</b>" +
-          "</del>" +
-          "</div>" +
           "</a>" +
           "</li>";
       }
       $(".viewTraval_top").html(viewTraval_top);
-      for (var i = 4; i < 8; i++) {
-        // console.log(data.data[i])
-        // console.log(data.data[0].name)
-        // console.log(data.data[0].salePrice)
-        // console.log(data.data[0].marketPrice)
-        // console.log(data.data[0].images[0].url)
+      console.log(data.data[i].id)
+      for (var j = 4; j < 8; j++) {
         viewTraval_bottom +=
           "<li>" +
-          '<a href="javascript:;">' +
-          "<img src=" +data.data[i].images[0].url +' title='+data.data[i].name+'>' +
-          "<h5>"+data.data[i].name+"</h5>" +
-          '<div class="here">' +
-          "<span>易旅价：" +
-          "<b>￥" +
-          "<i>"+data.data[i].salePrice+"</i>/人</b>" +
-          "</span>" +
-          '<del class="fr">￥' +
-          "<i>"+data.data[i].marketPrice+"</i>/人</b>" +
-          "</del>" +
-          "</div>" +
+          "<a href=./details.html?id=" +
+          data.data[j].id +
+          ">" +
+          "<img src=" +data.data[j].pic[0] +' title='+data.data[j].name+'>' +
+          "<h5>"+data.data[j].name+"</h5>" +
           "</a>" +
           "</li>";
       }
       $(".viewTraval_bottom").html(viewTraval_bottom);
     }
   });
-  //   周边游
+  // //   周边游
   $.ajax({
     type: "get",
-    url: common_api + "/user/viewTraval.action",
+    url: common_api + "/user/rimTravalView.action",
     dataType: "json",
     success: function(data) {
+      console.log(data.data)
       var rimTraval_top='',
       rimTraval_bottom='';
-    //   console.log(data.data);
+      // console.log(data.data);
       for (var i = 0; i < 4; i++) {
-        // console.log(data.data[i])
-        // console.log(data.data[0].name)
-        // console.log(data.data[0].salePrice)
-        // console.log(data.data[0].marketPrice)
-        // console.log(data.data[0].images[0].url)
         rimTraval_top +=
           "<li>" +
-          '<a href="javascript:;">' +
-          "<img src=" +data.data[i].images[0].url +' title='+data.data[i].name+'>' +
+          "<a href=./details.html?id=" +
+          data.data[i].id +
+          ">" +
+          "<img src=" +data.data[i].pic[0] +' title='+data.data[i].name+'>' +
           "<h5>"+data.data[i].name+"</h5>" +
-          '<div class="here">' +
-          "<span>易旅价：" +
-          "<b>￥" +
-          "<i>"+data.data[i].salePrice+"</i>/人</b>" +
-          "</span>" +
-          '<del class="fr">￥' +
-          "<i>"+data.data[i].marketPrice+"</i>/人</b>" +
-          "</del>" +
-          "</div>" +
           "</a>" +
           "</li>";
       }
       $(".rimTraval_top").html(rimTraval_top);
-      for (var i = 4; i < 8; i++) {
-        // console.log(data.data[i])
-        // console.log(data.data[0].name)
-        // console.log(data.data[0].salePrice)
-        // console.log(data.data[0].marketPrice)
-        // console.log(data.data[0].images[0].url)
+      for (var j = 4; j < 8; j++) {
         rimTraval_bottom +=
           "<li>" +
-          '<a href="javascript:;">' +
-          "<img src=" +data.data[i].images[0].url +' title='+data.data[i].name+'>' +
-          "<h5>"+data.data[i].name+"</h5>" +
-          '<div class="here">' +
-          "<span>易旅价：" +
-          "<b>￥" +
-          "<i>"+data.data[i].salePrice+"</i>/人</b>" +
-          "</span>" +
-          '<del class="fr">￥' +
-          "<i>"+data.data[i].marketPrice+"</i>/人</b>" +
-          "</del>" +
-          "</div>" +
+          "<a href=./details.html?id=" +
+          data.data[i].id +
+          ">" +
+          "<img src=" +data.data[j].pic[0] +' title='+data.data[j].name+'>' +
+          "<h5>"+data.data[j].name+"</h5>" +
           "</a>" +
           "</li>";
       }
       $(".rimTraval_bottom").html(rimTraval_bottom);
     }
   });
-  //   国内游
+  // //   国内游
   $.ajax({
     type: "get",
-    url: common_api + "/user/nationalTraval.action",
+    url: common_api + "/user/nationalTravalView.action",
     dataType: "json",
     success: function(data) {
       var nationalTraval_top='',
       nationalTraval_bottom='';
-    //   console.log(data.data);
+      // console.log(data.data);
       for (var i = 0; i < 4; i++) {
         // console.log(data.data[i])
-        // console.log(data.data[0].name)
-        // console.log(data.data[0].salePrice)
-        // console.log(data.data[0].marketPrice)
-        // console.log(data.data[0].images[0].url)
         nationalTraval_top +=
           "<li>" +
-          '<a href="javascript:;">' +
-          "<img src=" +data.data[i].images[0].url +' title='+data.data[i].name+'>' +
+          "<a href=./details.html?id=" +
+          data.data[i].id +
+          ">" +
+          "<img src=" +data.data[i].pic[0] +' title='+data.data[i].name+'>' +
           "<h5>"+data.data[i].name+"</h5>" +
-          '<div class="here">' +
-          "<span>易旅价：" +
-          "<b>￥" +
-          "<i>"+data.data[i].salePrice+"</i>/人</b>" +
-          "</span>" +
-          '<del class="fr">￥' +
-          "<i>"+data.data[i].marketPrice+"</i>/人</b>" +
-          "</del>" +
-          "</div>" +
           "</a>" +
           "</li>";
       }
       $(".nationalTraval_top").html(nationalTraval_top);
-      for (var i = 4; i < 8; i++) {
-        // console.log(data.data[i])
-        // console.log(data.data[0].name)
-        // console.log(data.data[0].salePrice)
-        // console.log(data.data[0].marketPrice)
-        // console.log(data.data[0].images[0].url)
-        nationalTraval_bottom +=
-          "<li>" +
-          '<a href="javascript:;">' +
-          "<img src=" +data.data[i].images[0].url +' title='+data.data[i].name+'>' +
-          "<h5>"+data.data[i].name+"</h5>" +
-          '<div class="here">' +
-          "<span>易旅价：" +
-          "<b>￥" +
-          "<i>"+data.data[i].salePrice+"</i>/人</b>" +
-          "</span>" +
-          '<del class="fr">￥' +
-          "<i>"+data.data[i].marketPrice+"</i>/人</b>" +
-          "</del>" +
-          "</div>" +
-          "</a>" +
-          "</li>";
-      }
-      $(".nationalTraval_bottom").html(nationalTraval_bottom);
     }
   });
 });
