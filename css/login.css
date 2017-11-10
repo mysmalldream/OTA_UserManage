@@ -1,7 +1,44 @@
 /*注册选择页*/
+/*页面顶部*/
+header {
+  height: 30px;
+  line-height: 20px;
+  background-color: #FBFCFC;
+  border-bottom: 1px solid #EBECEE;
+}
+header .center {
+  width: 80%;
+  margin: 0 auto;
+}
+header .center a {
+  color: #3A9DD8;
+}
+header .center a:hover {
+  color: red;
+}
+header .center .left li {
+  float: left;
+  list-style: none;
+}
+header .center .right {
+  float: right;
+}
+header .center .right li {
+  float: left;
+  list-style: none;
+}
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0px;
+  clear: both;
+  visibility: hidden;
+}
 .logoTip {
   width: 100%;
-  margin: 50px auto;
+  margin: 10px auto;
   height: 100%;
   border-bottom: 2px solid #5C9DE9;
 }

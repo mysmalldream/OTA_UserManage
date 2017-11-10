@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>个人分销商注册</title>
+	<link rel="shortcut icon" href="../imgs/ylt_favicon.ico" />
+	<link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/registerPersonal.css">
+	<!-- <link rel="stylesheet" href="../css/base.css"> -->
+</head>
+
+<body>
+	<div class="logoTip">
+		<div class="logo">
+			<img src="../imgs/logo.png" alt="">
+		</div>
+	</div>
+	<div class="login">
+		<div class="center">
+			<h4>个人分销商注册:</h4>
+			<form id="personal">
+
+				<div class="row form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-4 control-label form-label">姓名:</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="name" required id="name" placeholder="请输入您的姓名">
+							<span class="name" style="color:red"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label form-label">用户名:</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="userName" required id="userName" placeholder="请输入您的用户名">
+							<span class="userName" style="color:red"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label form-label">性别:</label>
+						<div class="col-sm-4">
+							<!-- <input type="text" class="form-control" name="gender" required id="gender" placeholder='请输入 "男" 或 "女"'>
+							<input id="man" type="radio" checked="checked" name="1" />男
+							<input id="woman" type="radio" name="1" />女 -->
+							<select name="gender" id="gender" class="form-control">
+								<option value="选择品牌">男</option>
+								<option value="选择品牌1">女</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label form-label">手机号:</label>
+						<div class="col-sm-4">
+							<input type="number" class="form-control" name="mobilePhone" required id="mobilePhone" placeholder="请输入11位手机号码">
+							<span class="mobilePhone" style="color:red">
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label form-label">QQ号:</label>
+						<div class="col-sm-4">
+							<input type="number" class="form-control" name="qq" id="qq" required placeholder="请输入QQ号码">
+							<span class="qq" style="color:red">
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label form-label">密码:</label>
+						<div class="col-sm-4">
+							<input type="password" class="form-control" name="password" required id="password" placeholder="请设置您的密码">
+							<span class="password" style="color:red">
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label form-label">地址:</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="address" required id="address" placeholder="请输入地址">
+							<span class="address" style="color:red">
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label form-label">紧急联系人姓名:</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="linkMan" required id="linkMan" placeholder="请输入紧急联系人姓名">
+							<span class="linkMan" style="color:red">
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label form-label">紧急联系人手机号:</label>
+						<div class="col-sm-4">
+							<input type="number" class="form-control" name="phone" id="phone" required placeholder="请输入紧急联系人的11位手机号">
+							<span class="phone" style="color:red">
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group btn-group col-md-offset-5">
+						<!-- <button class="btn btn-success" onclick="toValidate()">立 即 注 册</button> -->
+						<!-- <button class="btn btn-success" id="tijiao">立 即 注 册</button> -->
+						<!-- <input type="submit" value="提交"> -->
+						<!-- <a id="tijiao">立 即 注 册</a> -->
+						<a href="javascript:;" id="tijiao">立 即 注 册</a>
+					</div>
+				</div>
+				<!-- <input type="button" name="tijiao" id="tijiao" value="222"> -->
+			</form>
+		</div>
+	</div>
+</body>
+<script src="../lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<!-- <script src="../lib/validate.js"></script> -->
+<!-- <script src="../js/registerPersonal.js"></script> -->
+<script src="../js/commonapi/commonapi.js"></script>
+<script>
+	$('#userName').keyup(function () {
+		// console.log($('#userName').val())
+		$.ajax({
+			type: "get",
+			url: common_api + "custom/checkUserName.action?userName=" + $('#userName').val(),
+			dataType: "json",
+			success: function (data) {
+				console.log(data.msg)
+				if (data.code == 0) {
+					$('.userName').html(data.msg)
+				} else {
+					$('.userName').html('')
+				}
+			}
+		})
+	})
+
+	$("#name").on("change blur", function () {
+		if ($("#name").val() == '') {
+			$('.name').html("此项不能为空")
+		} else {
+			$('.name').html("")
+		}
+	});
+	$("#userName").on("change blur", function () {
+		if ($("#userName").val() == '') {
+			$('.userName').html("此项不能为空")
+		} else {
+			$('.userName').html("")
+		}
+	});
+	$("#mobilePhone").on("change blur", function () {
+		if ($("#mobilePhone").val() == '') {
+			$('.mobilePhone').html("此项不能为空")
+		} else {
+			$('.mobilePhone').html("")
+		}
+	});
+	$("#qq").on("change blur", function () {
+		if ($("#qq").val() == '') {
+			$('.qq').html("此项不能为空")
+		} else {
+			$('.qq').html("")
+		}
+	});
+	$("#password").on("change blur", function () {
+		if ($("#password").val() == '') {
+			$('.password').html("此项不能为空")
+		} else {
+			$('.password').html("")
+		}
+	});
+	$("#address").on("change blur", function () {
+		if ($("#address").val() == '') {
+			$('.address').html("此项不能为空")
+		} else {
+			$('.address').html("")
+		}
+	});
+	$("#linkMan").on("change blur", function () {
+		if ($("#linkMan").val() == '') {
+			$('.linkMan').html("此项不能为空")
+		} else {
+			$('.linkMan').html("")
+		}
+	});
+	$("#phone").on("change blur", function () {
+		if ($("#phone").val() == '') {
+			$('.phone').html("此项不能为空")
+		} else {
+			$('.phone').html("")
+		}
+	});
+
+
+
+
+
+
+	$("#tijiao").on('click', function () {
+		if ($("#name").val() == '') {
+			alert("姓名不能为空")
+		} else if ($("#userName").val() == '') {
+			alert('用户名不能为空')
+		} else if ($("#mobilePhone").val() == '') {
+			alert('手机号不能为空')
+		} else if ($("#qq").val() == '') {
+			alert('QQ号不能为空')
+		} else if ($("#password").val() == '') {
+			alert('密码不能为空')
+		} else if ($("#address").val() == '') {
+			alert('地址不能为空')
+		} else if ($("#linkMan").val() == '') {
+			alert('紧急联系人姓名不能为空')
+		} else if ($("#phone").val() == '') {
+			alert('紧急联系人手机号不能为空')
+		} else {
+			upForm();
+
+		}
+	})
+	function upForm() {
+		$.ajax({
+			type: "get",
+			url: common_api + "custom/addPerson.action?name=" + $("#name").val() + "&userName=" + $("#userName").val() + "&gender=" + $("#gender").val() + "&mobilePhone=" + $("#mobilePhone").val() + "&qq=" + $("#qq").val() + "&address=" + $("#address").val() + "&linkMan=" + $("#linkMan").val() + "&phone=" + $("#phone").val() + "&password=" + $("#password").val(),
+			dataType: "json",
+			data: {
+				name: $("#name").val(),
+				userName: $("#userName").val(),
+				gender: $("#gender").val(),
+				mobilePhone: $("#mobilePhone").val(),
+				qq: $("#qq").val(),
+				password: $("#password").val(),
+				address: $("#address").val(),
+				linkMan: $("#linkMan").val(),
+				phone: $("#phone").val(),
+			},
+			success: function (data) {
+				// console.log(data)
+				alert("恭喜,注册成功!点击确定返回登录页面~")
+				window.location.href = '../index.html';
+			}
+		})
+	}
+	// $('#tijiao').on('click', function () {
+	// 	console.log(213)
+	// 	// console.log($('#name').html())
+	// 	toValidate();
+	// })
+	// function toValidate() {
+	// 	var val = new validate({
+	// 		rules: {
+	// 			name: "notEmpty",
+	// 			userName: "notEmpty",
+	// 			gender: "notEmpty",
+	// 			mobilePhone: "notEmpty",
+	// 			mobilePhone: "mobile",
+	// 			qq: "notEmpty",
+	// 			qq: "qq",
+	// 			password: "notEmpty",
+	// 			password: "password",
+	// 			address: "notEmpty",
+	// 			linkMan: "notEmpty",
+	// 			phone: "notEmpty",
+	// 			phone: "mobile",
+	// 		},
+	// 		// submitFun: function () {
+	// 		// 	// alert("验证通过，提交啦 ！！！");
+	// 		// 	console.log($("#name").html());
+	// 		// 	console.log(111);
+	// 		// 	haha();
+	// 		// }
+	// 	});
+	// }
+</script>
+
+</html>

@@ -12,6 +12,28 @@
 </head>
 
 <body>
+    <!-- 顶部 -->
+    <header>
+        <div class="center clearfix">
+            <ul class="left fl">
+                <li>您好，欢迎来到易旅合创旅游网！</li>
+                <li>
+                    <a href="../index.html">登录</a> |&nbsp; </li>
+                <li>
+                    <a href="../page/login.html"> 注册</a>
+                </li>
+            </ul>
+            <!-- <ul class="right fr">
+    				<li>
+    					<a href="">我的游记</a> |&nbsp;</li>
+    				<li>
+    					<a href="">微信</a> |&nbsp;</li>
+    				<li>
+    					<a href="">客户服务</a>
+    				</li>
+    			</ul> -->
+        </div>
+    </header>
     <div class="logoTip">
         <div class="logo">
             <img src="../imgs/logo.png" alt="">
@@ -19,24 +41,139 @@
     </div>
     <div class="login">
         <div class="center">
-            <form class="form-horizontal">
-                <fieldset>
-                    <div id="legend" class="">
-                        <legend class="">表单名</legend>
+            <h4>企业分销商注册:<span class="">
+                <a href="./registerPersonal.html">去个人分销商注册页面?</a>
+            </span></h4>
+            <form id="company"  action="http://192.168.1.109:8080/TicketSales/custom/addCustom.action" method="post" enctype="multipart/form-data">
+                <!-- <form id="company" action="http://192.168.1.109:8080/TicketSales/custom/addCustom.action" method="post" enctype="multipart/form-data"></form> -->
+                <div class="row form-horizontal">
+                    <div class="form-group"><span class="name" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">企业分销商名称:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="name" required id="name" placeholder="请输入您的姓名">
+                        </div>
                     </div>
-                    <div class="control-group">
-
-                        <!-- Text input-->
-                        
+                    <div class="form-group"><span class="userName" style="color:red"></span><span class="userName1" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">用户名:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="userName" required id="userName" placeholder="请输入您的用户名">
+                        </div>
                     </div>
-
-                </fieldset>
+                    <div class="form-group"><span class="mobilePhone" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">手机号:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" name="mobilePhone" required id="mobilePhone" placeholder="请输入11位手机号码">
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="password" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">密码:</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" name="password" required id="password" placeholder="请设置您的密码">
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="password1" style="color:red"></span><span class="password2" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">再次输入密码:</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" name="password1" required id="password1" placeholder="请再次输入密码">
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="address" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">地址:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="address" required id="address" placeholder="请输入地址">
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="linkMan" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">联系人姓名:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="linkMan" required id="linkMan" placeholder="请输入联系人姓名">
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="phone" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">联系人手机号:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" name="phone" id="phone" required placeholder="请输入联系人的11位手机号">
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="represent" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">分销商法人代表姓名:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="represent" id="represent" required placeholder="请输入法人代表姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label form-label">企业分销商法人证件类型:</label>
+                        <div class="col-sm-4">
+                            <select name="idCardType" id="idCardType" class="form-control">
+                                <option value="选择品牌">身份证</option>
+                                <option value="选择品牌1">护照</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="idCard" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">分销商法人代表证件号码:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="idCard" id="idCard" required placeholder="请输入法人代表证件号码">
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="fileUrl" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">分销商证件图片:</label>
+                        <div class="col-sm-4">
+                            <input type="file" multiple class="form-control" name="file" id="fileUrl" required placeholder="请输入紧急联系人的11位手机号">
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="introduce" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">分销商公司简介:</label>
+                        <div class="col-sm-4">
+                            <textarea rows="" cols="" placeholder="请输入公司简介" name="introduce" id="introduce" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="financeMan" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">分销商财务联系人姓名:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="financeMan" id="financeMan" required placeholder="请输入财务联系人姓名">
+                        </div>
+                    </div>
+                    <div class="form-group"><span class="financePhone" style="color:red"></span>
+                        <label class="col-sm-4 control-label form-label">分销商财务联系人手机号码:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" name="financePhone" id="financePhone" required placeholder="请输入财务联系人手机号码的11位手机号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label form-label"></label>
+                        <div class="col-sm-4">
+                            <input type="checkbox" checked id="agree" >  <label for="agree">我同意</label>
+                            <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">企业分销商注册相关协议</a>
+                    
+                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <h4>企业分销商注册相关协议</h4>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
             </form>
-
-
+            <div class="row">
+                <div class="form-group btn-group col-md-offset-5">
+                    <a href="javascript:;" id="tijiao">立 即 注 册</a>
+                </div>
+            </div>
         </div>
     </div>
-
 </body>
+<script src="../lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="../lib/jQuery Form.js"></script>
+<script src="../js/registerCompany.js"></script>
+<script src="../js/commonapi/commonapi.js"></script>
+<script>
+
+</script>
 
 </html>

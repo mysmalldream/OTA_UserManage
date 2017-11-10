@@ -1,16 +1,59 @@
 /*注册选择页*/
 
 @color1: #0094E8; //页面主色调
+
+/*页面顶部*/
+
+header {
+    height: 30px; // border-bottom: 1px solid #ccc;
+    line-height: 20px;
+    background-color: #FBFCFC;
+    border-bottom: 1px solid #EBECEE;
+    .center {
+        width: 80%;
+        margin: 0 auto;
+        a {
+            color: #3A9DD8;
+        }
+        a:hover {
+            color: red;
+        }
+        .left {
+            li {
+                float: left;
+                list-style: none;
+            }
+        }
+        .right {
+            float: right;
+            li {
+                float: left;
+                list-style: none;
+            }
+        }
+    }
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
 //logo 区
 .logoTip {
     width: 100%;
-    margin: 50px auto;
+    margin: 10px auto;
     height: 100%;
     border-bottom: 2px solid #5C9DE9;
     .logo {
         width: 80%;
         margin: 0 auto;
-        height: 80px; 
+        height: 80px;
     }
 }
 
@@ -53,7 +96,7 @@
             }
             .btn {
                 margin-left: 30%;
-                a{
+                a {
                     text-decoration: none;
                     color: #fff;
                 }
@@ -88,7 +131,7 @@
             }
             .btn {
                 margin-left: 30%;
-                a{
+                a {
                     text-decoration: none;
                     color: #fff;
                 }

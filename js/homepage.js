@@ -7,7 +7,8 @@ $(function(jq) {
     url: common_api + "/user/scope.action",
     dataType: "json",
     success: function(data) {
-      // console.log(data);
+      console.log(data);
+      console.log(data.data[0].id);
       imgs = data.data[0].images;
       var posterTvGrid = function(o, options, data) {
         this.parent = jq("#" + o);
@@ -94,17 +95,20 @@ $(function(jq) {
             contentHolderUnit.setAttribute("ref", i);
             contentHolderUnit.setAttribute("id", "contentHolderUnit" + i);
             // var unitItem = '<a href="'+this.data[item].url+'" target="_blank" class="elementLink">';
-            var unitItem = '<a href="###">';
-            unitItem += "</a>";
+            var unitItem = '<a href=./order.html?id='+data.data[0].id+'>';
+            // unitItem += "</a>";
             unitItem +=
               '<img src="' +
               this.data[item].url +
               '" alt="' +
               this.data[item].name +
               '"/>';
+              
             unitItem += '<span class="elementOverlay"></span>';
             unitItem += '<span class="leftShadow"></span>';
             unitItem += '<span class="rightShadow"></span>';
+            unitItem += "</a>";
+            
             contentHolderUnit.innerHTML = unitItem;
             this.contentHolder.appendChild(contentHolderUnit);
           }
@@ -725,7 +729,7 @@ $(function(jq) {
           "</li>";
       }
       $(".viewTraval_top").html(viewTraval_top);
-      console.log(data.data[i].id)
+      // console.log(data.data[i].id)
       for (var j = 4; j < 8; j++) {
         viewTraval_bottom +=
           "<li>" +
@@ -746,7 +750,7 @@ $(function(jq) {
     url: common_api + "/user/rimTravalView.action",
     dataType: "json",
     success: function(data) {
-      console.log(data.data)
+      // console.log(data.data)
       var rimTraval_top='',
       rimTraval_bottom='';
       // console.log(data.data);
