@@ -1,5 +1,10 @@
 // 首页
 $(function(jq) {
+  // console.log( window.sessionStorage["id"]);
+  if ((window.sessionStorage["id"] == undefined)) {
+    window.location.href = "../index.html";
+  }
+  
   var imgs;
   //   轮播图
   $.ajax({
@@ -7,8 +12,8 @@ $(function(jq) {
     url: common_api + "/user/scope.action",
     dataType: "json",
     success: function(data) {
-      console.log(data);
-      console.log(data.data[0].id);
+      // console.log(data);
+      // console.log(data.data[0].id);
       imgs = data.data[0].images;
       var posterTvGrid = function(o, options, data) {
         this.parent = jq("#" + o);

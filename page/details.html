@@ -41,21 +41,11 @@
         <nav>
             <div class="top">
                 <img class="fl" src="../imgs/logo.png" alt="">
-                <form action="">
+                <form class="form" id="login" action="http://192.168.1.109:8080/TicketSales/user/search.action" method="post" enctype="multipart/form-data">
                     <ul class="top_right fr">
                         <li>
-                            <!-- <select name="" id="">
-                                        <option value="">所有产品</option>
-                                        <option value="">所有产品2</option>
-                                        <option value="">所有产品3</option>
-                                        <option value="">所有产品4</option>
-                                    </select> -->
-                            <input type="text" name="wer" placeholder="请输入产品ID、产品名称、目的地、景点">
-                            <button>
-                                <span class="glyphicon glyphicon-search"> </span> 搜 索</button>
-                        </li>
-                        <li>
-                            <img src="../imgs/serve.png" alt="">
+                            <input type="text" name="wer" placeholder="请输入产品名称、目的地、景点">
+                            <button><span class="glyphicon glyphicon-search"> </span> 搜 索</button>
                         </li>
                     </ul>
                 </form>
@@ -65,7 +55,7 @@
             <div class="topics_nav">
                 <ul class="clearfix">
                     <li>
-                        <a class="active" href="../index.html">首页</a>
+                        <a class="active" href="./homepage.html">首页</a>
                     </li>
                     <li>
                         <a href="javascript:;">景区介绍</a>

@@ -7,7 +7,9 @@ function GetQueryString(name) {
 }
 var numbers = GetQueryString("nameId");
 // console.log(numbers);
-
+  if (window.sessionStorage["id"] == undefined) {
+    window.location.href = "../index.html";
+  }
 $(function() {
   var urls = "";
   if (numbers == 1) {

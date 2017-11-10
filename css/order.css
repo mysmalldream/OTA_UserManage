@@ -327,3 +327,6 @@ footer .footer_center h5 {
   line-height: 100px;
   color: #fff;
 }
+.ht-rili-td:hover {
+  background-color: #e0dcdc;
+}

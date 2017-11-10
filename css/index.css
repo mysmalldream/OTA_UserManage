@@ -1,4 +1,32 @@
 /*登录页*/
+/*页面顶部*/
+header {
+  height: 40px;
+  line-height: 40px;
+  background-color: #FBFCFC;
+  border-bottom: 1px solid #EBECEE;
+}
+header .center {
+  width: 80%;
+  margin: 0 auto;
+}
+header .center a {
+  color: #3A9DD8;
+}
+header .center a:hover {
+  color: red;
+}
+header .center .left li {
+  float: left;
+  list-style: none;
+}
+header .center .right {
+  float: right;
+}
+header .center .right li {
+  float: left;
+  list-style: none;
+}
 .login {
   width: 902px;
   margin: 50px auto;
@@ -50,6 +78,13 @@
 }
 .login .center .right .form .btn {
   margin-top: 10px;
+}
+.login .center .right .form .btn a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 .login p {
   color: #A1A1A1;

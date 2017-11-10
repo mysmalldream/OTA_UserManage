@@ -48,61 +48,61 @@
                 <!-- <form id="company" action="http://192.168.1.109:8080/TicketSales/custom/addCustom.action" method="post" enctype="multipart/form-data"></form> -->
                 <div class="row form-horizontal">
                     <div class="form-group"><span class="name" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">企业分销商名称:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b> 企业分销商名称:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" name="name" required id="name" placeholder="请输入您的姓名">
                         </div>
                     </div>
                     <div class="form-group"><span class="userName" style="color:red"></span><span class="userName1" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">用户名:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>用户名:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" name="userName" required id="userName" placeholder="请输入您的用户名">
                         </div>
                     </div>
                     <div class="form-group"><span class="mobilePhone" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">手机号:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>手机号:</label>
                         <div class="col-sm-4">
                             <input type="number" class="form-control" name="mobilePhone" required id="mobilePhone" placeholder="请输入11位手机号码">
                         </div>
                     </div>
                     <div class="form-group"><span class="password" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">密码:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>密码:</label>
                         <div class="col-sm-4">
                             <input type="password" class="form-control" name="password" required id="password" placeholder="请设置您的密码">
                         </div>
                     </div>
                     <div class="form-group"><span class="password1" style="color:red"></span><span class="password2" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">再次输入密码:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>再次输入密码:</label>
                         <div class="col-sm-4">
                             <input type="password" class="form-control" name="password1" required id="password1" placeholder="请再次输入密码">
                         </div>
                     </div>
                     <div class="form-group"><span class="address" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">地址:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>地址:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" name="address" required id="address" placeholder="请输入地址">
                         </div>
                     </div>
                     <div class="form-group"><span class="linkMan" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">联系人姓名:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>联系人姓名:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" name="linkMan" required id="linkMan" placeholder="请输入联系人姓名">
                         </div>
                     </div>
                     <div class="form-group"><span class="phone" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">联系人手机号:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>联系人手机号:</label>
                         <div class="col-sm-4">
                             <input type="number" class="form-control" name="phone" id="phone" required placeholder="请输入联系人的11位手机号">
                         </div>
                     </div>
                     <div class="form-group"><span class="represent" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">分销商法人代表姓名:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>分销商法人代表姓名:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" name="represent" id="represent" required placeholder="请输入法人代表姓名">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label form-label">企业分销商法人证件类型:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>企业分销商法人证件类型:</label>
                         <div class="col-sm-4">
                             <select name="idCardType" id="idCardType" class="form-control">
                                 <option value="选择品牌">身份证</option>
@@ -111,31 +111,31 @@
                         </div>
                     </div>
                     <div class="form-group"><span class="idCard" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">分销商法人代表证件号码:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>分销商法人代表证件号码:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" name="idCard" id="idCard" required placeholder="请输入法人代表证件号码">
                         </div>
                     </div>
                     <div class="form-group"><span class="fileUrl" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">分销商证件图片:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>分销商证件图片:</label>
                         <div class="col-sm-4">
-                            <input type="file" multiple class="form-control" name="file" id="fileUrl" required placeholder="请输入紧急联系人的11位手机号">
+                            <input type="file" multiple class="form-control" name="file" id="fileUrl" accept="image/*" required placeholder="请输入紧急联系人的11位手机号">
                         </div>
                     </div>
                     <div class="form-group"><span class="introduce" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">分销商公司简介:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>分销商公司简介:</label>
                         <div class="col-sm-4">
-                            <textarea rows="" cols="" placeholder="请输入公司简介" name="introduce" id="introduce" class="form-control"></textarea>
+                            <textarea rows="5" cols="" placeholder="请输入公司简介" name="introduce" id="introduce" class="form-control"></textarea>
                         </div>
                     </div>
                     <div class="form-group"><span class="financeMan" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">分销商财务联系人姓名:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>分销商财务联系人姓名:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" name="financeMan" id="financeMan" required placeholder="请输入财务联系人姓名">
                         </div>
                     </div>
                     <div class="form-group"><span class="financePhone" style="color:red"></span>
-                        <label class="col-sm-4 control-label form-label">分销商财务联系人手机号码:</label>
+                        <label class="col-sm-4 control-label form-label"><b>* </b>分销商财务联系人手机号码:</label>
                         <div class="col-sm-4">
                             <input type="number" class="form-control" name="financePhone" id="financePhone" required placeholder="请输入财务联系人手机号码的11位手机号">
                         </div>

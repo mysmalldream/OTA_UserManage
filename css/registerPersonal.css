@@ -52,6 +52,9 @@ header .center .right li {
   margin: 0px auto;
   height: 100%;
 }
+.login b {
+  color: red;
+}
 .login .center {
   width: 60%;
   margin: 10px auto;
