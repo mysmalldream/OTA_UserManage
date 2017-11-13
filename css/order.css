@@ -135,7 +135,7 @@ nav .top .top_right li:nth-child(1) {
 }
 .special .special_top2 .order_right .price_top h3,
 .special .special_top2 .order_right .price_top h4 {
-  margin-top: 4%;
+  margin-top: 2%;
 }
 .special .special_top2 .order_right .price_top em,
 .special .special_top2 .order_right .price_top del {
@@ -160,7 +160,7 @@ nav .top .top_right li:nth-child(1) {
   color: #929190;
 }
 .special .special_top2 .order_right .price_bottom .people {
-  margin: 10% 0;
+  margin: 6% 0;
 }
 .special .special_top2 .order_right .price_bottom .once {
   display: inline-block;
@@ -175,8 +175,6 @@ nav .top .top_right li:nth-child(1) {
   border-radius: 5px;
   border: 1px solid #5EB7FF;
   display: inline-block;
-  width: 100px;
-  height: 15%;
   text-align: center;
   margin-right: 10%;
 }
@@ -185,15 +183,17 @@ nav .top .top_right li:nth-child(1) {
   color: #fff;
   line-height: 40px;
 }
-.special .special_top2 .order_right .price_bottom .agree h1 {
+.special .special_top2 .order_right .price_bottom .agree .custom h1 {
   line-height: 45px;
   font-size: 30px;
   color: #F36B1E;
+  background-color: #fff;
 }
-.special .special_top2 .order_right .price_bottom .agree p {
+.special .special_top2 .order_right .price_bottom .agree .custom p {
   border-top: 1px solid #5EB7FF;
-  line-height: 25px;
+  line-height: 30px;
   color: #ccc;
+  background-color: #fff;
 }
 .special .special_top2 #magnifier {
   position: relative;
@@ -251,6 +251,14 @@ nav .top .top_right li:nth-child(1) {
 }
 .special .special_top2 .thumbnail-box .list .item-cur img {
   border: 2px solid #e53e41;
+}
+.name {
+  color: red;
+}
+.custom {
+  width: 120px !important;
+  height: 120px !important;
+  background-size: 100%;
 }
 /*推荐理由*/
 .special .special_top4 {

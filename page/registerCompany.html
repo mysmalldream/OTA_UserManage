@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../imgs/ylt_favicon.ico" />
     <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/registerCompany.css">
+    <link rel="stylesheet" href="../lib/alert/sweet-alert.css">
     <!-- <link rel="stylesheet" href="../css/base.css"> -->
 </head>
 
@@ -50,7 +51,7 @@
                     <div class="form-group"><span class="name" style="color:red"></span>
                         <label class="col-sm-4 control-label form-label"><b>* </b> 企业分销商名称:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="name" required id="name" placeholder="请输入您的姓名">
+                          <input type="text" autofocus="autofocus" class="form-control" name="name" required id="name" placeholder="请输入您的姓名">
                         </div>
                     </div>
                     <div class="form-group"><span class="userName" style="color:red"></span><span class="userName1" style="color:red"></span>
@@ -143,9 +144,9 @@
                     <div class="form-group">
                         <label class="col-sm-4 control-label form-label"></label>
                         <div class="col-sm-4">
-                            <input type="checkbox" checked id="agree" >  <label for="agree">我同意</label>
+                            <input type="checkbox" checked id="agrees" >  <label for="agrees">我同意</label>
                             <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">企业分销商注册相关协议</a>
-                    
+                            <span class="people" style='color:red'></span>
                             <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
@@ -172,6 +173,7 @@
 <script src="../lib/jQuery Form.js"></script>
 <script src="../js/registerCompany.js"></script>
 <script src="../js/commonapi/commonapi.js"></script>
+<script src="../lib/alert/sweet-alert.min.js"></script>
 <script>
 
 </script>

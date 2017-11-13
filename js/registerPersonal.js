@@ -1,6 +1,7 @@
 // 个人分销商注册
 
 $(function() {
+ 
   $("#userName").keyup(function() {
     // console.log($('#userName').val())
     $.ajax({
@@ -109,12 +110,16 @@ $(function() {
       alert("紧急联系人姓名不能为空");
     } else if ($("#phone").val() == "") {
       alert("紧急联系人手机号不能为空");
-    } else {
+    } else if($("#agrees").is(":checked")){
+      $(".people").html("");
       $("#personal").ajaxSubmit(function() {
-        alert("恭喜,注册成功!点击确定返回登录页面~");
-        window.location.href = "../index.html";
+        swal("","恭喜,注册成功!3s后自动返回登录页面~");
+        setTimeout(() => {
+          window.location.href = "../index.html";
+        }, 3000);
       });
-      return false;
+    }else{
+       $(".people").html("请勾选");
     }
   });
 });

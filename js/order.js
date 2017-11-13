@@ -11,6 +11,7 @@ if (window.sessionStorage["id"] == undefined) {
   window.location.href = "../index.html";
 }
 
+var productId;
 $(function() {
   $("#magnifier").magnifier(); //产品图片
   $(".spinnerExample").spinner({}); //预定人数
@@ -21,10 +22,9 @@ $(function() {
       .slideToggle(500);
   });
 
-
   //客户满意度
-  $(".agree>h1>i").html(Math.floor(Math.random() * 10) + 90);
-  $(".agree>p>span").html(Math.floor(Math.random() * 100) + 20);
+  $(".custom>h1>i").html(Math.floor(Math.random() * 10) + 90);
+  $(".custom>p>span").html(Math.floor(Math.random() * 100) + 20);
 
   // 产品详细数据
   $.ajax({
@@ -35,22 +35,21 @@ $(function() {
       console.log(data.data);
       // console.log(data.data.name);
       // console.log(data.data.calendar);
-
-      var lis = "",dates;
-       $(".calendar-box").calendar({
-         ele: ".demo-box", //依附
-         title: "请选择出发日期 : ",
-         beginDate: "",
-         endDate: "",
-         data:  data.data.calendar,
-        //  [
-        //    { timeDate: "2017-11-01", price: "101" }, 
-        //    { timeDate: "2017-11-02", price: "102" },
-        //    { timeDate: "2017-11-03", price: "102" }],
-       });
-        $(".special_top3 h3").html(data.data.name);
-        $("#salePrice").html(data.data.salePrice);
-        $("#marketPrice").html(data.data.marketPrice);
+      productId = data.data.id;
+      var lis = "",
+        dates;
+      $(".calendar-box").calendar({
+        ele: ".demo-box", //依附
+        title: "请选择出发日期 : ",
+        beginDate: "",
+        endDate: "",
+        data: data.data.calendar
+      });
+      $(".startTime").html(data.data.startTime);
+      $(".endTime").html(data.data.endTime);
+      $(".special_top3 h3").html(data.data.name);
+      $("#salePrice").html(data.data.salePrice);
+      $("#marketPrice").html(data.data.marketPrice);
       // for (var i = 0; i < data.data.images.length; i++) {
       lis +=
         '<div class="item active">' +
@@ -71,17 +70,188 @@ $(function() {
       // }
       $(".carousel-inner").html(lis);
       $(".carousel").carousel({ interval: 2000 });
+      // 支付验证
+      $("#userName").on("change blur", function() {
+        if ($("#userName").val().length == 0) {
+          $(".fill1").html("姓名不能为空");
+        } else {
+          $(".fill1").html("");
+        }
+      });
+
+      $("#userPhone").on("change blur", function() {
+        if ($("#userPhone").val().length == 0) {
+          $(".fill2").html("手机号不能为空");
+        } else {
+          $(".fill2").html("");
+        }
+      });
+
+      $("#idCard").on("change blur", function() {
+        if ($("#idCard").val().length == 0) {
+          $(".fill3").html("身份证号不能为空");
+        } else {
+          $(".fill3").html("");
+        }
+      });
+
+      $("#userPhone").on("change blur", function() {
+        if ($("#userPhone").val().length == 0) {
+          $(".fill1").html("姓名不能为空");
+        } else {
+          $(".fill1").html("");
+        }
+      });
+      // 支付开始
+      $(".pays").on("click", function() {
+        if ($("#zhifubao").is(":checked")) {
+          ispay = "支付宝支付";
+        } else {
+          ispay = "微信支付";
+        }
+
+        var date = new Date();
+        this.year = date.getFullYear();
+        this.month = date.getMonth() + 1;
+        this.date = date.getDate();
+        this.hour =
+          date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+        this.minute =
+          date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+        this.second =
+          date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+        var currentTime =
+          this.year +
+          "" +
+          this.month +
+          "" +
+          this.date +
+          "" +
+          this.hour +
+          "" +
+          this.minute +
+          "" +
+          this.second;
+        var orderId = currentTime + Math.floor(Math.random() * 1000000000);
+        $.ajax({
+          type: "get",
+          url:
+            common_api +
+            "/user/addOrder.action?orderId=" +
+            orderId +
+            "&productId=" +
+            data.data.id +
+            "&productName=" +
+            data.data.name +
+            "&customId=" +
+            data.data.customId +
+            "&custName=" +
+            data.data.customName +
+            "&supplierId=" +
+            data.data.supplierId +
+            "&viewId=" +
+            data.data.viewId +
+            "&ispay=" +
+            ispay +
+            "&orderNumber=" +
+            $(".spinnerExample").val() +
+            "&unitPrice=" +
+            data.data.salePrice +
+            "&createDate=" +
+            new Date().getFullYear() +
+            "-" +
+            (new Date().getMonth() + 1) +
+            "-" +
+            new Date().getDate() +
+            "&price=" +
+            $(".spinnerExample").val() * data.data.salePrice +
+            "&useDate=" +
+            data.data.startTime +
+            "&userPhone=" +
+            $("#userPhone").val() +
+            "&userName=" +
+            $("#userName").val() +
+            "&idCard=" +
+            $("#idCard").val() +
+            "&remark=" +
+            $("#remark").val(),
+          dataType: "json",
+          success: function(data) {
+            console.log(data);
+            if (data.code == 1) {
+              $(".modal-dialog").hide();
+              swal(
+                {
+                  title: "请使用手机扫码支付",
+                  text: "恭喜!订单提交成功",
+                  type: "success",
+                  // showCancelButton: true,
+                  confirmButtonColor: "#24E51A",
+                  confirmButtonText: "查看订单状态",
+                  closeOnConfirm: false,
+                  imageUrl: data.path
+                },
+                function() {
+                  $.ajax({
+                    type: "get",
+                    url: common_api + "/queryServlet?out_trade_no=" + orderId,
+                    success: function(data) {
+                      console.log(data);
+                      console.log(data.message);
+                      if (data.code == 1) {
+                        sweetAlert(data.message);
+                      } else {
+                        sweetAlert(data.message);
+                      }
+                    }
+                  });
+                }
+              );
+              console.log(orderId);
+            } else {
+              $(".modal-dialog").hide();
+              sweetAlert("订单提交失败!", "请重新下单支付~", "error");
+            }
+          }
+        });
+      });
     }
   });
   $(".watch").on("click", function() {
     getActive();
   });
-  $(".zhifubao").on("click", function() {
+  $(".zhifu").on("click", function() {
     getActive();
   });
-    function getActive() {
-      var data = $(".calendar-box").calendarGetActive();
-      // console.log(data);
-      $(".riqi").html(data.date);
-    }
+  function getActive() {
+    var data = $(".calendar-box").calendarGetActive();
+    // console.log(data);
+    $(".riqi").html(data.date);
+  }
+  // })
+  // function showtime() {
+  //   var date = new Date();
+  //   this.year = date.getFullYear();
+  //   this.month = date.getMonth() + 1;
+  //   this.date = date.getDate();
+  //   this.hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+  //   this.minute =
+  //     date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+  //   this.second =
+  //     date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+  //   var currentTime =
+  //     this.year +
+  //     "" +
+  //     this.month +
+  //     "" +
+  //     this.date +
+  //     "" +
+  //     this.hour +
+  //     "" +
+  //     this.minute +
+  //     "" +
+  //     this.second;
+  //   var orderId = currentTime + Math.floor(Math.random() * 1000000000);
+  //   console.log(orderId);
+  // }
 });

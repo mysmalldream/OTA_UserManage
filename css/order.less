@@ -144,7 +144,7 @@
                     margin-bottom: 5px;
                     h3,
                     h4 {
-                        margin-top: 4%;
+                        margin-top: 2%;
                     }
                     em,
                     del {
@@ -168,7 +168,7 @@
                         color: #929190;
                     }
                     .people {
-                        margin: 10% 0;
+                        margin: 6% 0;
                     }
                     .once {
                         display: inline-block;
@@ -185,25 +185,26 @@
                     .agree {
                         border-radius: 5px;
                         border: 1px solid #5EB7FF;
-                        display: inline-block;
-                        width: 100px;
-                        height: 15%;
+                        display: inline-block; // width: 100px;
+                        // height: 15%;
                         text-align: center;
                         margin-right: 10%;
                         .custom {
                             background-color: #5EB7FF;
                             color: #fff;
                             line-height: 40px;
-                        }
-                        h1 {
-                            line-height: 45px;
-                            font-size: 30px;
-                            color: @color3;
-                        }
-                        p {
-                            border-top: 1px solid #5EB7FF;
-                            line-height: 25px;
-                            color: #ccc;
+                            h1 {
+                                line-height: 45px;
+                                font-size: 30px;
+                                color: @color3;
+                                background-color: #fff;
+                            }
+                            p {
+                                border-top: 1px solid #5EB7FF;
+                                line-height: 30px;
+                                color: #ccc;
+                                background-color: #fff;
+                            }
                         }
                     }
                 }
@@ -268,6 +269,15 @@
                 border: 2px solid #e53e41;
             }
         }
+    }
+
+    .name {
+        color: red;
+    } // 返回的二维码图片
+    .custom {
+        width: 120px !important;
+        height: 120px !important;
+        background-size: 100%
     }
     /*推荐理由*/
 
@@ -349,8 +359,7 @@
                 color: #fff;
             }
         }
-    } 
-    //  日历
+    } //  日历
     .ht-rili-td:hover {
         background-color: rgb(224, 220, 220);
     }

@@ -30,8 +30,9 @@ $(function() {
           // alert("恭喜,登陆成功,点击确定去往首页页面~");
           // console.log(data.data.id)
           window.sessionStorage["id"] = JSON.stringify(data.data.id);
-          window.location.href = "./page/homepage.html";
+          // window.location.href = "./page/homepage.html";
         } else {
+          $(".tijiao").html("用户名或密码错误");
           alert(data.msg);
         }
       });

@@ -8,6 +8,8 @@
 	<link rel="shortcut icon" href="../imgs/ylt_favicon.ico" />
 	<link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/registerPersonal.css">
+	<link rel="stylesheet" href="../lib/alert/sweet-alert.css">
+	
 	<!-- <link rel="stylesheet" href="../css/base.css"> -->
 </head>
 
@@ -48,7 +50,7 @@
 					<div class="form-group"><span class="name" style="color:red"></span>
 						<label class="col-sm-4 control-label form-label"><b>* </b>姓名:</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" name="name" required id="name" placeholder="请输入您的姓名">
+							<input type="text" class="form-control" name="name" required id="name" placeholder="请输入您的姓名" autofocus="autofocus">
 						</div>
 					</div>
 					<div class="form-group"><span class="userName" style="color:red"></span><span class="userName1" style="color:red"></span>
@@ -111,9 +113,9 @@
 					<div class="form-group">
 						<label class="col-sm-4 control-label form-label"></label>
 						<div class="col-sm-4">
-							<input type="checkbox" checked > 我同意
+							<input type="checkbox" id='agrees' checked > <label for="agrees">我同意</label>
 							<a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">个人分销商注册相关协议</a>
-
+							<span class="people" style='color:red'></span>
 							<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 								<div class="modal-dialog modal-lg" role="document">
 									<div class="modal-content">
@@ -139,6 +141,7 @@
 <script src="../lib/jQuery Form.js"></script>
 <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="../js/commonapi/commonapi.js"></script>
+<script src="../lib/alert/sweet-alert.min.js"></script>
 <script>
 
 </script>

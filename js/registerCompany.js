@@ -150,12 +150,16 @@ $(function() {
       alert("法人代表证件号码不能为空");
     } else if ($("#phone").val() == "") {
       alert("分销商公司简介不能为空");
-    } else {
+    } else if ($("#agrees").is(":checked")) {
+      $(".people").html("");
       $("#company").ajaxSubmit(function() {
-        alert("恭喜,提交成功!请您耐心等待审核,审核通过后方可登录,点击确定返回登录页面~");
-        window.location.href = "../index.html";
+        swal("", "恭喜,提交审核成功!3s后自动返回登录页面~");
+        setTimeout(() => {
+          window.location.href = "../index.html";
+        }, 3000);
       });
-      return false;
+    } else {
+      $(".people").html("请勾选");
     }
   });
 });
