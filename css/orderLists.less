@@ -1,0 +1,110 @@
+            @color2: #0094E8; //页面主色调
+            @color3: #F36B1E; //价格色
+            /*页面顶部*/
+            /*支付成功订单*/
+
+            header {
+                height: 40px;
+                line-height: 40px;
+                background-color: #7fbef5;
+                .center {
+                    width: 80%;
+                    margin: 0 auto;
+                    a {
+                        color: #fff;
+                    }
+                    a:hover {
+                        color: red;
+                    }
+                    .left {
+                        li {
+                            float: left;
+                        }
+                    }
+                    .right {
+                        li {
+                            float: left;
+                        }
+                    }
+                }
+            }
+
+            nav {
+                height: 80px;
+                margin: 20px 0;
+                border-bottom: 2px solid @color2;
+                .top {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+            }
+
+            .topics {
+                background-color: @color2;
+                .topics_nav {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+            /*成功订单*/
+
+            .special {
+                margin-top: 20px;
+                .special_top2 {
+                    width: 60%;
+                    margin: 0 auto;
+                    .tab-pane {
+                        >ul {
+                            >li {
+                                display: flex;
+                                border: 1px solid #EAEAEA;
+                                padding: 1%;
+                                margin: 5px 0;
+                                background-color: #fff;
+                                img {
+                                    width: 33%;
+                                    height: 33%;
+                                    flex: 1;
+                                    border-radius: 10px;
+                                }
+                                .stateOerder {
+                                    flex: 2;
+                                    >ul {
+                                        padding: 3% 5%;
+                                        >li {
+                                            line-height: 200%;
+                                        }
+                                    }
+                                }
+                            }
+                            >li:hover {
+                                border: 2px solid #000;
+                            }
+                        }
+                    }
+                }
+            }
+            /*底部*/
+
+            footer {
+                background-color: @color2;
+                margin-top: 120px;
+                .footer_center {
+                    width: 80%;
+                    margin: 0 auto;
+                    height: 100px;
+                    h5 {
+                        text-align: center;
+                        line-height: 100px;
+                        color: #fff;
+                    }
+                }
+            } // 点击回到顶部
+            #up {
+                position: fixed;
+                z-index: 10000;
+                bottom: 50px;
+                right: 30px;
+                font-size: 30px;
+                cursor: pointer;
+            }

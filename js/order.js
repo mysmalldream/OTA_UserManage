@@ -50,6 +50,7 @@ $(function() {
       $(".special_top3 h3").html(data.data.name);
       $("#salePrice").html(data.data.salePrice);
       $("#marketPrice").html(data.data.marketPrice);
+      // 轮播图
       // for (var i = 0; i < data.data.images.length; i++) {
       lis +=
         '<div class="item active">' +
@@ -104,6 +105,8 @@ $(function() {
       });
       // 支付开始
       $(".pays").on("click", function() {
+        // console.log(111);
+        // console.log($(".riqi").html());
         if ($("#zhifubao").is(":checked")) {
           ispay = "支付宝支付";
         } else {
@@ -166,7 +169,7 @@ $(function() {
             "&price=" +
             $(".spinnerExample").val() * data.data.salePrice +
             "&useDate=" +
-            data.data.startTime +
+            $(".riqi").html() +
             "&userPhone=" +
             $("#userPhone").val() +
             "&userName=" +
@@ -197,11 +200,37 @@ $(function() {
                     url: common_api + "/queryServlet?out_trade_no=" + orderId,
                     success: function(data) {
                       console.log(data);
-                      console.log(data.message);
                       if (data.code == 1) {
-                        sweetAlert(data.message);
+                        swal({ 
+                            title: data.message, 
+                            confirmButtonColor: "#87C8E9",
+                            confirmButtonText: "确 定", 
+                            closeOnConfirm: false
+                          },
+                          function(){
+                            $(".in").removeClass("modal-backdrop");
+                            // $("#myModal").hide();
+                            $(".sweet-alert").hide();
+                            $(".sweet-overlay").hide();
+                            window.location.href = window.location.href; 
+                            console.log(542365);
+                          }
+                        );
                       } else {
-                        sweetAlert(data.message);
+                       swal(
+                         {
+                           title: data.message,
+                           confirmButtonColor: "#87C8E9",
+                           confirmButtonText: "确 定",
+                           closeOnConfirm: false
+                         },
+                         function() {
+                           $(".in").removeClass("modal-backdrop");
+                           $(".sweet-alert").hide();
+                           $(".sweet-overlay").hide();
+                           window.location.href =window.location.href;
+                         }
+                       );
                       }
                     }
                   });
@@ -210,7 +239,17 @@ $(function() {
               console.log(orderId);
             } else {
               $(".modal-dialog").hide();
-              sweetAlert("订单提交失败!", "请重新下单支付~", "error");
+              swal(
+                {
+                  title: "订单提交失败!",
+                  confirmButtonColor: "#87C8E9",
+                  confirmButtonText: "确 定",
+                  closeOnConfirm: false
+                },
+                function() {
+                  window.location.href = window.location.href;
+                }
+              );
             }
           }
         });
@@ -223,35 +262,10 @@ $(function() {
   $(".zhifu").on("click", function() {
     getActive();
   });
+  // 出发日期
   function getActive() {
     var data = $(".calendar-box").calendarGetActive();
     // console.log(data);
     $(".riqi").html(data.date);
   }
-  // })
-  // function showtime() {
-  //   var date = new Date();
-  //   this.year = date.getFullYear();
-  //   this.month = date.getMonth() + 1;
-  //   this.date = date.getDate();
-  //   this.hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-  //   this.minute =
-  //     date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-  //   this.second =
-  //     date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-  //   var currentTime =
-  //     this.year +
-  //     "" +
-  //     this.month +
-  //     "" +
-  //     this.date +
-  //     "" +
-  //     this.hour +
-  //     "" +
-  //     this.minute +
-  //     "" +
-  //     this.second;
-  //   var orderId = currentTime + Math.floor(Math.random() * 1000000000);
-  //   console.log(orderId);
-  // }
 });

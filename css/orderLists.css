@@ -1,0 +1,95 @@
+/*页面顶部*/
+/*支付成功订单*/
+header {
+  height: 40px;
+  line-height: 40px;
+  background-color: #7fbef5;
+}
+header .center {
+  width: 80%;
+  margin: 0 auto;
+}
+header .center a {
+  color: #fff;
+}
+header .center a:hover {
+  color: red;
+}
+header .center .left li {
+  float: left;
+}
+header .center .right li {
+  float: left;
+}
+nav {
+  height: 80px;
+  margin: 20px 0;
+  border-bottom: 2px solid #0094E8;
+}
+nav .top {
+  width: 80%;
+  margin: 0 auto;
+}
+.topics {
+  background-color: #0094E8;
+}
+.topics .topics_nav {
+  width: 100%;
+  margin: 0 auto;
+}
+/*成功订单*/
+.special {
+  margin-top: 20px;
+}
+.special .special_top2 {
+  width: 60%;
+  margin: 0 auto;
+}
+.special .special_top2 .tab-pane > ul > li {
+  display: flex;
+  border: 1px solid #EAEAEA;
+  padding: 1%;
+  margin: 5px 0;
+  background-color: #fff;
+}
+.special .special_top2 .tab-pane > ul > li img {
+  width: 33%;
+  height: 33%;
+  flex: 1;
+  border-radius: 10px;
+}
+.special .special_top2 .tab-pane > ul > li .stateOerder {
+  flex: 2;
+}
+.special .special_top2 .tab-pane > ul > li .stateOerder > ul {
+  padding: 3% 5%;
+}
+.special .special_top2 .tab-pane > ul > li .stateOerder > ul > li {
+  line-height: 200%;
+}
+.special .special_top2 .tab-pane > ul > li:hover {
+  border: 2px solid #000;
+}
+/*底部*/
+footer {
+  background-color: #0094E8;
+  margin-top: 120px;
+}
+footer .footer_center {
+  width: 80%;
+  margin: 0 auto;
+  height: 100px;
+}
+footer .footer_center h5 {
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+}
+#up {
+  position: fixed;
+  z-index: 10000;
+  bottom: 50px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}

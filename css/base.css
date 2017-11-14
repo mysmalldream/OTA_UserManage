@@ -15,7 +15,7 @@ html,body{                 /*整个页面文字样式*/
     /*font-size: 12px;*/
     /*text-align: left;*/
 	width: 100%;
-	min-width: 1100px !important;
+	min-width: 1400px !important;
 	/* background:-webkit-gradient(linear, 0 0, to top right, from(#ff0000), to(rgba(0, 0, 255, 0.5))); */
 	/* background: linear-gradient(to right,rgba(225,44,88, 0.1) , blue);  */
 	background: linear-gradient(#7DC6FF, #fff); /* 标准的语法 */

@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>更多产品</title>
+    <title>我的订单</title>
     <link rel="shortcut icon" href="../imgs/ylt_favicon.ico" />
     <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="../css/orderLists.css">
     <link rel="stylesheet" href="../lib/lunbotu/posterTvGrid.css">
     <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="../lib/button/button.css">
+    <link rel="stylesheet" href="../lib/alert/sweet-alert.css"> 
 </head>
 
 <body>
@@ -26,7 +27,7 @@
                     <a href="./login.html"> 注册</a>
                 </li>
             </ul>
-            <ul class="right fr">
+            <!-- <ul class="right fr">
                 <li>
                     <a href="">我的游记</a> |&nbsp;</li>
                 <li>
@@ -34,62 +35,87 @@
                 <li>
                     <a href="">客户服务</a>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </header>
     <!-- logo以及搜索区 -->
-        <nav>
-            <div class="top">
-                <img class="fl" src="../imgs/logo.png" alt="">
-                <form class="form" id="login" action="http://192.168.1.109:8080/TicketSales/user/search.action" method="post" enctype="multipart/form-data">
-                    <ul class="top_right fr">
-                        <li>
-                            <input type="text" name="wer" placeholder="请输入产品名称、目的地、景点">
-                            <button><span class="glyphicon glyphicon-search"> </span> 搜 索</button>
-                        </li>
-                    </ul>
-                </form>
-            </div>
-        </nav>
-        <div class="topics">
-            <div class="topics_nav">
-                <ul class="clearfix">
-                    <li>
-                        <a class="active" href="./homepage.html">首页</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">景区介绍</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">周边旅游</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">帮助中心</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">平台公告</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">特供商品</a>
-                    </li>
-                </ul>
-            </div>
+    <nav>
+        <div class="top">
+            <img class="fl" src="../imgs/logo.png" alt="">
         </div>
-        <div class="special">
-                <div class="special_top2">
-                    <div class="tuijian">
-                        <i class="glyphicon glyphicon-chevron-right"></i> 景区更多产品
-                    </div>
-                </div>  
-        </div>  
+    </nav>
     <!-- 更多景区 -->
     <div class="special">
         <div class="special_top2">
-            <ul class="more">
-                <!-- <li class="clearfix">
-                    <img class="fl" data-original="../imgs/loading.gif" alt="">
-                </li> -->
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#home" data-toggle="tab">已支付</a>
+                </li>
+                <li class="">
+                    <a href="#ios" data-toggle="tab">已退款</a>
+                </li>
             </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <ul class="tab-pane_success">
+                        <!-- <li class="">
+                            <img class="" src="../imgs/big_1.jpg" alt="">
+                            <div class="stateOerder  ">
+                                <ul class="stateOerder_before">
+                                    <li>
+                                        <div class="createDate">
+                                            <b style="font-size:16px;">下单日期:
+                                                <span style='margin-right:15px;'>2017-11-13</span>订单号:
+                                                <span>20171113145505903661775</span>
+                                            </b>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="productName">
+                                            产品名称:
+                                            <span>特别推荐景区1产品1</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="isPay">
+                                            支付方式:
+                                            <span>微信支付</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="status">
+                                            状态:
+                                            <span>支付成功</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unitPrice">
+                                            总金额:¥
+                                            <span>20</span>元
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="number">
+                                            数量:
+                                            <span>2</span>人
+                                            <input id='out_trade_nos' type=""  value="" style='border:1px solid red;'>
+                                            <input id='ids' type=""  value="" style='border:1px solid red;'>
+                                            <input id='total_fees' type=""  value="" style='border:1px solid red;'>
+                                            <input id='refund_fees' type=""  value="" style='border:1px solid red;'>
+                                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal" >退 款</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                               
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+
+                <div class="tab-pane fade" id="ios">
+                    退款成功
+                </div>
+            </div>
         </div>
     </div>
     <footer>
@@ -100,15 +126,16 @@
     <!-- <h2 id="h2">scroolTop Footer</h2> -->
     <div id="up">
         <span class="glyphicon glyphicon-arrow-up"></span>
-    </div>          
-    
+    </div>
+
 </body>
 <script src="../lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
 <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="../lib/swiper/js/swiper.jquery.min.js"></script>
-<script src="../js/details.js"></script>
+<script src="../js/orderLists.js"></script>
 <script src="../js/commonapi.js"></script>
 <script src="../lib/jquery.lazyload.min.js"></script>
+<script src="../lib/alert/sweet-alert.min.js"></script>
 <script type="text/javascript" charset="utf-8">
     $(function () {
         $("img").lazyload({
