@@ -6,7 +6,7 @@ function GetQueryString(name) {
   return null;
 }
 // console.log(GetQueryString("id"));
-// console.log(GetQueryString("id"));
+// console.log(window.sessionStorage["id"]);
 if (window.sessionStorage["id"] == undefined) {
   window.location.href = "../index.html";
 }
@@ -24,7 +24,7 @@ $(function() {
 
   //客户满意度
   $(".custom>h1>i").html(Math.floor(Math.random() * 10) + 90);
-  $(".custom>p>span").html(Math.floor(Math.random() * 100) + 20);
+  $(".custom>p>span").html(Math.floor(Math.random() * 100) + 50);
 
   // 产品详细数据
   $.ajax({
@@ -32,7 +32,7 @@ $(function() {
     url: common_api + "/user/detailPro.action?id=" + GetQueryString("id"),
     dataType: "json",
     success: function(data) {
-      console.log(data.data);
+      // console.log(data.data);
       // console.log(data.data.name);
       // console.log(data.data.calendar);
       productId = data.data.id;
@@ -136,6 +136,7 @@ $(function() {
           "" +
           this.second;
         var orderId = currentTime + Math.floor(Math.random() * 1000000000);
+        $('.pays').html('请 稍 后...')
         $.ajax({
           type: "get",
           url:
@@ -177,7 +178,9 @@ $(function() {
             "&idCard=" +
             $("#idCard").val() +
             "&remark=" +
-            $("#remark").val(),
+            $("#remark").val() +
+            "&userId=" +
+            window.sessionStorage["id"],
           dataType: "json",
           success: function(data) {
             console.log(data);
@@ -195,48 +198,105 @@ $(function() {
                   imageUrl: data.path
                 },
                 function() {
-                  $.ajax({
-                    type: "get",
-                    url: common_api + "/queryServlet?out_trade_no=" + orderId,
-                    success: function(data) {
-                      console.log(data);
-                      if (data.code == 1) {
-                        swal({ 
-                            title: data.message, 
-                            confirmButtonColor: "#87C8E9",
-                            confirmButtonText: "确 定", 
-                            closeOnConfirm: false
-                          },
-                          function(){
-                            $(".in").removeClass("modal-backdrop");
-                            // $("#myModal").hide();
-                            $(".sweet-alert").hide();
-                            $(".sweet-overlay").hide();
-                            window.location.href = window.location.href; 
-                            console.log(542365);
-                          }
-                        );
-                      } else {
-                       swal(
-                         {
-                           title: data.message,
-                           confirmButtonColor: "#87C8E9",
-                           confirmButtonText: "确 定",
-                           closeOnConfirm: false
-                         },
-                         function() {
-                           $(".in").removeClass("modal-backdrop");
-                           $(".sweet-alert").hide();
-                           $(".sweet-overlay").hide();
-                           window.location.href =window.location.href;
+                  //支付宝                  
+                  if(data.isPay=='支付宝支付'){
+                     $.ajax({
+                       type: "get",
+                       url:
+                         common_api +
+                         "/alipayQueryServlet?out_trade_no=" +
+                         orderId,
+                       success: function(data) {
+                         console.log(data);
+                         if (data.code == 1) {
+                           swal(
+                             {
+                               title: data.message,
+                               confirmButtonColor:
+                                 "#87C8E9",
+                               confirmButtonText: "确 定",
+                               closeOnConfirm: false
+                             },
+                             function() {
+                               $(".in").removeClass(
+                                 "modal-backdrop"
+                               );
+                               // $("#myModal").hide();
+                               $(".sweet-alert").hide();
+                               $(".sweet-overlay").hide();
+                               window.location.href =
+                                 window.location.href;
+                             }
+                           );
+                         } else {
+                           swal(
+                             {
+                               title: data.message,
+                               confirmButtonColor:
+                                 "#87C8E9",
+                               confirmButtonText: "确 定",
+                               closeOnConfirm: false
+                             },
+                             function() {
+                               $(".in").removeClass(
+                                 "modal-backdrop"
+                               );
+                               $(".sweet-alert").hide();
+                               $(".sweet-overlay").hide();
+                               window.location.href =
+                                 window.location.href;
+                             }
+                           );
                          }
-                       );
+                       }
+                     });
+                  }else{
+                    //微信
+                    $.ajax({
+                      type: "get",
+                      url: common_api + "/queryServlet?out_trade_no=" + orderId,
+                      success: function(data) {
+                        console.log(data);
+                        if (data.code == 1) {
+                          swal(
+                            {
+                              title: data.message,
+                              confirmButtonColor: "#87C8E9",
+                              confirmButtonText: "确 定",
+                              closeOnConfirm: false
+                            },
+                            function() {
+                              $(".in").removeClass("modal-backdrop");
+                              // $("#myModal").hide();
+                              $(".sweet-alert").hide();
+                              $(".sweet-overlay").hide();
+                              window.location.href = window.location.href;
+                              console.log(542365);
+                            }
+                          );
+                        } else {
+                          swal(
+                            {
+                              title: data.message,
+                              confirmButtonColor: "#87C8E9",
+                              confirmButtonText: "确 定",
+                              closeOnConfirm: false
+                            },
+                            function() {
+                              $(".in").removeClass("modal-backdrop");
+                              $(".sweet-alert").hide();
+                              $(".sweet-overlay").hide();
+                              window.location.href = window.location.href;
+                            }
+                          );
+                        }
                       }
-                    }
                   });
+                  }
+                  
                 }
               );
-              console.log(orderId);
+              // console.log(orderId);
             } else {
               $(".modal-dialog").hide();
               swal(

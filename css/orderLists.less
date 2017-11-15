@@ -54,7 +54,8 @@
                     width: 60%;
                     margin: 0 auto;
                     .tab-pane {
-                        >ul {
+                        //已支付
+                        >.tab-pane_success {
                             >li {
                                 display: flex;
                                 border: 1px solid #EAEAEA;
@@ -72,7 +73,34 @@
                                     >ul {
                                         padding: 3% 5%;
                                         >li {
-                                            line-height: 200%;
+                                            line-height: 230%;
+                                        }
+                                    }
+                                }
+                            }
+                            >li:hover {
+                                border: 2px solid #000;
+                            }
+                        } //已退款
+                        >.tab-pane_successqq {
+                            >li {
+                                display: flex;
+                                border: 1px solid #EAEAEA;
+                                padding: 1%;
+                                margin: 5px 0;
+                                background-color: #fff;
+                                img {
+                                    width: 33%;
+                                    height: 33%;
+                                    flex: 1;
+                                    border-radius: 10px;
+                                }
+                                .stateOerder {
+                                    flex: 2;
+                                    >ul {
+                                        padding: 1% 5%;
+                                        >li {
+                                            line-height: 230%;
                                         }
                                     }
                                 }

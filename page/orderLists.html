@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../lib/lunbotu/posterTvGrid.css">
     <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="../lib/button/button.css">
-    <link rel="stylesheet" href="../lib/alert/sweet-alert.css"> 
+    <link rel="stylesheet" href="../lib/alert/sweet-alert.css">
 </head>
 
 <body>
@@ -113,7 +113,54 @@
                 </div>
 
                 <div class="tab-pane fade" id="ios">
-                    退款成功
+                    <ul class="tab-pane_successqq">
+                        <!-- <li class="">
+                            <img class="" src="../imgs/big_1.jpg" alt="">
+                            <div class="stateOerder  ">
+                                <ul class="stateOerder_before">
+                                    <li>
+                                        <div class="createDate">
+                                            <b style="font-size:16px;">下单日期:
+                                                <span style='margin-right:15px;'>2017-11-13</span>订单号:
+                                                <span>20171113145505903661775</span>
+                                            </b>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="productName">
+                                            产品名称:
+                                            <span>特别推荐景区1产品1</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="isPay">
+                                            支付方式:
+                                            <span>微信支付</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="status">
+                                            状态:
+                                            <span>退款成功</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unitPrice">
+                                            总金额:¥
+                                            <span>20</span>元
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="number">
+                                            数量:
+                                            <span>2</span>人
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li> -->
+                    </ul>
                 </div>
             </div>
         </div>
@@ -147,7 +194,7 @@
             // threshold,值为数字,代表页面高度.如设置为200,表示滚动条在离目标位置还有200的高度时就开始加载图片,可以做到不让用户察觉
             // event: 'click',  // 事件触发时才加载
             // event,值有click(点击),mouseover(鼠标划过),sporty(运动的),foobar(…).可以实现鼠标莫过或点击图片才开始加载,后两个值未测试…
-            container: $(".special_top2"),  // 对某容器中的图片实现效果
+            container: $(".special_top2"), // 对某容器中的图片实现效果
             // container,值为某容器.lazyload默认在拉动浏览器滚动条时生效,这个参数可以让你在拉动某DIV的滚动条时依次加载其中的图片
             // failurelimit: 10 // 图片排序混乱时
             // failurelimit,值为数字.lazyload默认在找到第一张不在可见区域里的图片时则不再继续加载,但当HTML容器混乱的时候可能出现可见区域内图片并没加载出来的情况,failurelimit意在加载N张可见区域外的图片,以避免出现这个问题.
@@ -157,13 +204,17 @@
 <script>
     $(function () {
         $(window).scroll(function () {
-            var $scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//兼容浏览器
-            if ($scrollTop > 150) {//滚动高度可调，也可以为某个div的scrollTop，需要的可以自行修改
+            var $scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; //兼容浏览器
+            if ($scrollTop > 150) { //滚动高度可调，也可以为某个div的scrollTop，需要的可以自行修改
                 $("#up").show();
-            } else { $("#up").hide(); };
+            } else {
+                $("#up").hide();
+            };
         });
         $("#up").click(function () {
-            $('body,html').animate({ scrollTop: 0 }, 500);
+            $('body,html').animate({
+                scrollTop: 0
+            }, 500);
             return false;
         });
     });
