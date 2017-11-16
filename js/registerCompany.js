@@ -153,7 +153,7 @@ $(function() {
     } else if ($("#agrees").is(":checked")) {
       $(".people").html("");
       $("#company").ajaxSubmit(function() {
-        swal("", "恭喜,提交审核成功!3s后自动返回登录页面~");
+        swal("恭喜,提交审核成功!请耐心等待~", "3s后自动返回登录页面~", "success");
         setTimeout(() => {
           window.location.href = "../index.html";
         }, 3000);

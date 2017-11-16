@@ -102,6 +102,7 @@ $(function() {
         }
         $(".tab-pane_success").html(lis);
         $(".tuikuan").on("click", function() {
+          // console.log($(this).parent().find($('button')));
           var out_trade_noss = $(this)
             .parent()
             .find("#out_trade_nos")
@@ -141,6 +142,7 @@ $(function() {
             },
             function() {
               $(".confirm").html("请 稍 等...");
+              // console.log($(this).parent()[0]);
               if (is_pays == "支付宝支付") {
                 $.ajax({
                   //支付宝退款提交

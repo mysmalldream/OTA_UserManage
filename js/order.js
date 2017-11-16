@@ -32,9 +32,10 @@ $(function() {
     url: common_api + "/user/detailPro.action?id=" + GetQueryString("id"),
     dataType: "json",
     success: function(data) {
-      // console.log(data.data);
-      // console.log(data.data.name);
-      // console.log(data.data.calendar);
+      console.log(data.data);
+      $(".viewRemark").html(data.data.viewRemark);
+      $(".costInside").html(data.data.costInside);
+      $(".costOutside").html(data.data.costOutside);
       productId = data.data.id;
       var lis = "",
         dates;
@@ -186,6 +187,7 @@ $(function() {
             console.log(data);
             if (data.code == 1) {
               $(".modal-dialog").hide();
+              $(".confirm").html('请 稍 后...');
               swal(
                 {
                   title: "请使用手机扫码支付",
