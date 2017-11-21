@@ -163,6 +163,32 @@ $(function() {
                     if (data.code == 0) {
                       swal("退款失败", "该订单已过期，不能退款！", "error");
                     } else if (data.code == 1) {
+                      // var timer = setInterval(function(paams) {
+                      //   console.log(1111);
+                      //   $.ajax({    //支付宝退款主动查询
+                      //     type: "get",
+                      //     url:
+                      //       common_api +
+                      //       "/alipayRefundQueryServlet?out_request_no=" +
+                      //       data.out_request_no +
+                      //       "&out_trade_no=" +
+                      //       data.out_trade_no +
+                      //       "&id=" +
+                      //       data.id,
+                      //     dataType: "json",
+                      //     success: function(data) {
+                      //       console.log(data);
+                      //       console.log(data.message);
+
+                      //       setTimeout(() => {
+                      //         if (data.message !== null) {
+                      //           clearInterval(timer);
+                      //         }
+                      //       }, 5000);
+                      //     }
+                      //   });
+                      // }, 1000);
+
                       swal(
                         {
                           title: "退款提交成功",
@@ -174,6 +200,23 @@ $(function() {
                           closeOnConfirm: false
                         },
                         function() {
+                          $.ajax({
+                            //支付宝退款主动查询
+                            type: "get",
+                            url:
+                              common_api +
+                              "/alipayRefundQueryServlet?out_request_no=" +
+                              data.out_request_no +
+                              "&out_trade_no=" +
+                              data.out_trade_no +
+                              "&id=" +
+                              data.id,
+                            dataType: "json",
+                            success: function(data) {
+                              console.log(data);
+                              // console.log(data.message);
+                            }
+                          });
                           $(".sweet-overlay").hide();
                           $(".sweet-alert").hide();
                           window.location.href = window.location.href;
@@ -353,7 +396,7 @@ $(function() {
               setTimeout(function() {
                 $.ajax({
                   type: "get",
-                  url: common_api + "user/deleteRefund.action?id=" + idss,
+                  url: common_api + "/user/deleteRefund.action?id=" + idss,
                   dataType: "json",
                   success: function(data) {
                     console.log(data);
