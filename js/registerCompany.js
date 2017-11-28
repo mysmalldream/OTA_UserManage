@@ -152,6 +152,7 @@ $(function() {
       alert("分销商公司简介不能为空");
     } else if ($("#agrees").is(":checked")) {
       $(".people").html("");
+      $("#tijiao").html("提 交 中...");
       $("#company").ajaxSubmit(function() {
         swal("恭喜,提交审核成功!请耐心等待~", "3s后自动返回登录页面~", "success");
         setTimeout(() => {

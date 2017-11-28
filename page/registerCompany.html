@@ -48,7 +48,8 @@
                 </span>
             </h4>
             <!-- <form id="company"  action="http://192.168.1.109:8080/TicketSales/custom/addCustom.action" method="post" enctype="multipart/form-data"> -->
-            <form id="company" action="http://test.elvmedia.cn:8080/Ticket/custom/addCustom.action" method="post" enctype="multipart/form-data">
+            <!-- <form id="company" action="http://test.elvmedia.cn:8080/Ticket/custom/addCustom.action" method="post" enctype="multipart/form-data"> -->
+                <form id="company" action="http://service.nvinfo.cn:8080/TicketSales/custom/addCustom.action" method="post" enctype="multipart/form-data">
                 <div class="row form-horizontal">
                     <div class="form-group">
                         <span class="name" style="color:red"></span>
@@ -218,6 +219,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div style='color:red'>
+                                tips:企业分销商需要在审核通过后才能登陆,请您耐心等待~
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -225,8 +229,6 @@
             <div class="row">
                 <div class="form-group btn-group col-md-offset-5">
                     <a href="javascript:;" id="tijiao">立 即 注 册</a>
-                    <button id="fat-btn" class="btn btn-primary" data-loading-text="Loading..." type="button"> 加载状态
-                    </button>
                 </div>
             </div>
         </div>
@@ -240,14 +242,7 @@
 <script src="../js/commonapi/commonapi.js"></script>
 <script src="../lib/alert/sweet-alert.min.js"></script>
 <script>
-    $(function () {
-        $(".btn").click(function () {
-            $(this).button('loading').delay(1000).queue(function () {
-                // $(this).button('reset');
-                // $(this).dequeue(); 
-            });
-        });
-    });  
+
 </script>
 
 </html>

@@ -33,6 +33,7 @@ $(function() {
     dataType: "json",
     success: function(data) {
       console.log(data.data);
+      console.log(data.data.calendar[0].price);
       $(".viewRemark").html(data.data.viewRemark);
       $(".costInside").html(data.data.costInside);
       $(".costOutside").html(data.data.costOutside);
@@ -49,7 +50,8 @@ $(function() {
       $(".startTime").html(data.data.startTime);
       $(".endTime").html(data.data.endTime);
       $(".special_top3 h3").html(data.data.name);
-      $("#salePrice").html(data.data.salePrice);
+      // $("#salePrice").html(data.data.salePrice);
+      $("#salePrice").html(data.data.calendar[0].price);
       $("#marketPrice").html(data.data.marketPrice);
       // 轮播图
       // for (var i = 0; i < data.data.images.length; i++) {
@@ -161,7 +163,7 @@ $(function() {
             "&orderNumber=" +
             $(".spinnerExample").val() +
             "&unitPrice=" +
-            data.data.salePrice +
+            $(".pics").html() +
             "&createDate=" +
             new Date().getFullYear() +
             "-" +
@@ -169,7 +171,7 @@ $(function() {
             "-" +
             new Date().getDate() +
             "&price=" +
-            $(".spinnerExample").val() * data.data.salePrice +
+            $(".spinnerExample").val() * $(".pics").html() +
             "&useDate=" +
             $(".riqi").html() +
             "&userPhone=" +
@@ -187,7 +189,7 @@ $(function() {
             console.log(data);
             if (data.code == 1) {
               $(".modal-dialog").hide();
-              $(".confirm").html('请 稍 后...');
+              $(".confirm").html("请 稍 后...");
               swal(
                 {
                   title: "请使用手机扫码支付",
@@ -200,63 +202,14 @@ $(function() {
                   imageUrl: data.path
                 },
                 function() {
-                  //支付宝                  
-                  if(data.isPay=='支付宝支付'){
-                     $.ajax({
-                       type: "get",
-                       url:
-                         common_api +
-                         "/alipayQueryServlet?out_trade_no=" +
-                         orderId,
-                       success: function(data) {
-                         console.log(data);
-                         if (data.code == 1) {
-                           swal(
-                             {
-                               title: data.message,
-                               confirmButtonColor:
-                                 "#87C8E9",
-                               confirmButtonText: "确 定",
-                               closeOnConfirm: false
-                             },
-                             function() {
-                               $(".in").removeClass(
-                                 "modal-backdrop"
-                               );
-                               // $("#myModal").hide();
-                               $(".sweet-alert").hide();
-                               $(".sweet-overlay").hide();
-                               window.location.href =
-                                 window.location.href;
-                             }
-                           );
-                         } else {
-                           swal(
-                             {
-                               title: data.message,
-                               confirmButtonColor:
-                                 "#87C8E9",
-                               confirmButtonText: "确 定",
-                               closeOnConfirm: false
-                             },
-                             function() {
-                               $(".in").removeClass(
-                                 "modal-backdrop"
-                               );
-                               $(".sweet-alert").hide();
-                               $(".sweet-overlay").hide();
-                               window.location.href =
-                                 window.location.href;
-                             }
-                           );
-                         }
-                       }
-                     });
-                  }else{
-                    //微信
+                  //支付宝
+                  if (data.isPay == "支付宝支付") {
                     $.ajax({
                       type: "get",
-                      url: common_api + "/queryServlet?out_trade_no=" + orderId,
+                      url:
+                        common_api +
+                        "/alipayQueryServlet?out_trade_no=" +
+                        orderId,
                       success: function(data) {
                         console.log(data);
                         if (data.code == 1) {
@@ -272,7 +225,54 @@ $(function() {
                               // $("#myModal").hide();
                               $(".sweet-alert").hide();
                               $(".sweet-overlay").hide();
-                              window.location.href = window.location.href;
+                              window.location.href =
+                                window.location.href;
+                            }
+                          );
+                        } else {
+                          swal(
+                            {
+                              title: data.message,
+                              confirmButtonColor: "#87C8E9",
+                              confirmButtonText: "确 定",
+                              closeOnConfirm: false
+                            },
+                            function() {
+                              $(".in").removeClass("modal-backdrop");
+                              $(".sweet-alert").hide();
+                              $(".sweet-overlay").hide();
+                              window.location.href =
+                                window.location.href;
+                            }
+                          );
+                        }
+                      }
+                    });
+                  } else {
+                    //微信
+                    $.ajax({
+                      type: "get",
+                      url:
+                        common_api +
+                        "/queryServlet?out_trade_no=" +
+                        orderId,
+                      success: function(data) {
+                        console.log(data);
+                        if (data.code == 1) {
+                          swal(
+                            {
+                              title: data.message,
+                              confirmButtonColor: "#87C8E9",
+                              confirmButtonText: "确 定",
+                              closeOnConfirm: false
+                            },
+                            function() {
+                              $(".in").removeClass("modal-backdrop");
+                              // $("#myModal").hide();
+                              $(".sweet-alert").hide();
+                              $(".sweet-overlay").hide();
+                              window.location.href =
+                                window.location.href;
                               console.log(542365);
                             }
                           );
@@ -288,14 +288,14 @@ $(function() {
                               $(".in").removeClass("modal-backdrop");
                               $(".sweet-alert").hide();
                               $(".sweet-overlay").hide();
-                              window.location.href = window.location.href;
+                              window.location.href =
+                                window.location.href;
                             }
                           );
                         }
                       }
-                  });
+                    });
                   }
-                  
                 }
               );
               // console.log(orderId);
@@ -328,6 +328,9 @@ $(function() {
   function getActive() {
     var data = $(".calendar-box").calendarGetActive();
     // console.log(data);
+    console.log(data.price);
     $(".riqi").html(data.date);
+    $(".pics").html(data.money);
+    // $("#salePrice").html(data.money);
   }
 });

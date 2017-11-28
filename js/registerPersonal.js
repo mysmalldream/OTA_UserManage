@@ -112,6 +112,7 @@ $(function() {
       alert("紧急联系人手机号不能为空");
     } else if($("#agrees").is(":checked")){
       $(".people").html("");
+      $("#tijiao").html("提 交 中...");
       $("#personal").ajaxSubmit(function() {
          swal("恭喜,注册成功!", "3s后自动返回登录页面~", "success");
         setTimeout(() => {

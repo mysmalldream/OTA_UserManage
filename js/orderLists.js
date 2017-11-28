@@ -223,7 +223,7 @@ $(function() {
                         }
                       );
                     } else if (data.code == 2) {
-                      swal("网络异常,请重试~", " ", "warning");
+                      swal(data.message, " ", "warning");
                     }
                   }
                 });
@@ -275,7 +275,7 @@ $(function() {
                         }
                       );
                     } else if (data.code == 2) {
-                      swal("网络异常,请重试~", " ", "warning");
+                      swal(data.message, " ", "warning");
                     }
                   }
                 });

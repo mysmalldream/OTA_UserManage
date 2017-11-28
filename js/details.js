@@ -20,7 +20,7 @@ $(function() {
     success: function(data) {
       console.log(data.data);
       if (data.code === 0) {
-        $(".more").html("亲,暂无更多景区了哦~");
+        $(".more").html("亲,暂无数据了呢~");
       } else {
         var lis = "";
         for (var i = 0; i < data.data.length; i++) {
@@ -46,10 +46,10 @@ $(function() {
             ' class="button button-3d button-highlight button-pill button-small">预 定</a>' +
             "</span>" +
             "</p>" +
-            '<div class="date">出发日期: <span class="yellow">' +
+            '<div class="date">有效期开始: <span class="yellow">' +
             data.data[i].startTime +
             "</span>" +
-            '&nbsp;&nbsp;&nbsp;结束日期: <span class="yellow">' +
+            '&nbsp;&nbsp;&nbsp;有效期结束: <span class="yellow">' +
             data.data[i].endTime +
             "</span></div>" +
             "</div>" +
