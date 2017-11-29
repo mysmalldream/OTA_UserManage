@@ -14,6 +14,7 @@
 <script>
     if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
         window.location.href = './page/browser.html';
+        // alert(4321432)
     }
 </script>
 
@@ -53,9 +54,7 @@
                     </span>
                     <i>30秒注册</i>
                 </div>
-                <!-- <form class="form" id="login" action="http://192.168.1.109:8080/TicketSales/user/login.action" method="post" enctype="multipart/form-data"> -->
-                <!-- <form class="form" id="login" action="http://test.elvmedia.cn:8080/Ticket/user/login.action" method="post" enctype="multipart/form-data"> -->
-                    <form class="form" id="login" action="http://service.nvinfo.cn:8080/TicketSales/user/login.action" method="post" enctype="multipart/form-data">
+                <form class="form" id="login" action=""  enctype="multipart/form-data" name='login'>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon">
@@ -97,5 +96,6 @@
 <script src="./lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="./js/index.js"></script>
 <script src="./lib/jQuery Form.js"></script>
+<script src="./js/commonapi.js"></script>
 
 </html>

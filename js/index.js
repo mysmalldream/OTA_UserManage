@@ -17,14 +17,11 @@ $(function() {
     }
   });
   $("#tijiao").on("click", function() {
-    if (
-      $("#exampleInputAmount1").val() == "" ||
-      $("#exampleInputAmount2").val() == ""
-    ) {
-      $(".tijiao").html("* 用户名或密码不能为空");
-    } else {
-      $(".tijiao").html("");
-      $("#login").ajaxSubmit(function(data) {
+    var obj = {
+      url: common_api+"/user/login.action", 
+      type: "post", 
+      dataType: "json",
+      success: function(data) {
         console.log(data);
         if (data.code === 1) {
           // alert("恭喜,登陆成功,点击确定去往首页页面~");
@@ -35,8 +32,31 @@ $(function() {
           $(".tijiao").html("用户名或密码错误");
           alert(data.msg);
         }
-      });
-      return false;
-    }
+      }
+    };
+    if (
+      $("#exampleInputAmount1").val() == "" ||
+      $("#exampleInputAmount2").val() == ""
+    ) {
+      $(".tijiao").html("* 用户名或密码不能为空");
+    } else {
+      $(".tijiao").html("");
+      $("#login").ajaxSubmit(obj)      //提交表单数据
+      // {
+        // alert(453254);
+        // return false;
+        // console.log(obj);
+        // if (data.code === 1) {
+        //   // alert("恭喜,登陆成功,点击确定去往首页页面~");
+        //   // console.log(data.data.id)
+        //   window.sessionStorage["id"] = JSON.stringify(data.data.id);
+        //   window.location.href = "./page/homepage.html";
+        // } else {
+        //   $(".tijiao").html("用户名或密码错误");
+        //   alert(data.msg);
+        // }
+      // });
+      // return false;
+      }
   });
 });

@@ -1,10 +1,7 @@
 // 个人分销商注册
 
 $(function() {
-  // var options = {
-  //   // url: "http://192.168.1.109:8080/TicketSales/custom/addCustom.action"   //默认是form的action， 如果申明，则会覆盖
-  //   url: common_api + "custom/addCustom.action" //默认是form的action， 如果申明，则会覆盖
-  // };
+  
   $("#userName").keyup(function() {
     // console.log($('#userName').val())
     $.ajax({
@@ -132,6 +129,20 @@ $(function() {
   });
 
   $("#tijiao").on("click", function() {
+    var obj = {
+      url: common_api+"/custom/addCustom.action", 
+      type: "post", 
+      dataType: "json",
+      success: function(data) {
+        console.log(data);
+        if (data.code === 1) {
+          swal("恭喜,提交审核成功!请耐心等待~", "3s后自动返回登录页面~", "success");
+          setTimeout(() => {
+            window.location.href = "../index.html";
+          }, 3000);
+        } 
+      }
+    };
     if ($("#name").val() == "") {
       alert("企业分销商名称");
     } else if ($("#mobilePhone").val() == "") {
@@ -153,12 +164,7 @@ $(function() {
     } else if ($("#agrees").is(":checked")) {
       $(".people").html("");
       $("#tijiao").html("提 交 中...");
-      $("#company").ajaxSubmit(function() {
-        swal("恭喜,提交审核成功!请耐心等待~", "3s后自动返回登录页面~", "success");
-        setTimeout(() => {
-          window.location.href = "../index.html";
-        }, 3000);
-      });
+      $("#company").ajaxSubmit(obj);    //提交表单数据
     } else {
       $(".people").html("请勾选");
     }

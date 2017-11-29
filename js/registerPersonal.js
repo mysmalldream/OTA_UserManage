@@ -94,6 +94,20 @@ $(function() {
   });
 
   $("#tijiao").on("click", function() {
+    var obj = {
+      url: common_api+"/custom/addPerson.action", 
+      type: "post", 
+      dataType: "json",
+      success: function(data) {
+        console.log(data);
+        if (data.code === 1) {
+          swal("恭喜,注册成功!", "3s后自动返回登录页面~", "success");
+          setTimeout(() => {
+            window.location.href = "../index.html";
+          }, 3000);
+        } 
+      }
+    };
     if ($("#name").val() == "") {
       alert("姓名不能为空");
     } else if ($("#userName").val() == "") {
@@ -113,12 +127,7 @@ $(function() {
     } else if($("#agrees").is(":checked")){
       $(".people").html("");
       $("#tijiao").html("提 交 中...");
-      $("#personal").ajaxSubmit(function() {
-         swal("恭喜,注册成功!", "3s后自动返回登录页面~", "success");
-        setTimeout(() => {
-          window.location.href = "../index.html";
-        }, 3000);
-      });
+      $("#personal").ajaxSubmit(obj);   //提交表单数据
     }else{
        $(".people").html("请勾选");
     }
