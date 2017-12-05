@@ -620,8 +620,8 @@ $(function(jq) {
     dataType: "json",
     success: function(data) {
       var special_left, special_center, special_right_top, special_right_bottom;
-      // console.log(data.data);
-      // console.log(data.data[0].id);
+      console.log(data.data);
+      console.log(data.data[3].pic);
       special_left =
         "<a href=./details.html?id=" +
         data.data[0].id +
@@ -755,7 +755,8 @@ $(function(jq) {
     url: common_api + "/user/rimTravalView.action",
     dataType: "json",
     success: function(data) {
-      // console.log(data.data)
+      console.log(111111)
+      console.log(data.data)
       var rimTraval_top='',
       rimTraval_bottom='';
       // console.log(data.data);
@@ -775,7 +776,7 @@ $(function(jq) {
         rimTraval_bottom +=
           "<li>" +
           "<a href=./details.html?id=" +
-          data.data[i].id +
+          data.data[j].id +
           ">" +
           "<img src=" +data.data[j].pic[0] +' title='+data.data[j].name+'>' +
           "<h5>"+data.data[j].name+"</h5>" +

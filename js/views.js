@@ -30,7 +30,7 @@ $(function() {
     url: common_api + "/user/" + urls + ".action",
     dataType: "json",
     success: function(data) {
-      // console.log(data.data);
+      console.log(data);
       var lis = "";
       for (var i = 0; i < data.data.length; i++) {
         // console.log(data.data[i].id);
@@ -51,6 +51,10 @@ $(function() {
           "</li>";
       }
       $(".contents").html(lis);
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+      // console.log(XMLHttpRequest);
+      // console.log(1111);
     }
   });
 });
