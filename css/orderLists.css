@@ -68,7 +68,7 @@ nav .top {
   line-height: 230%;
 }
 .special .special_top2 .tab-pane > .tab-pane_success > li:hover {
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
 .special .special_top2 .tab-pane > .tab-pane_successqq > li {
   display: flex;
@@ -93,7 +93,7 @@ nav .top {
   line-height: 230%;
 }
 .special .special_top2 .tab-pane > .tab-pane_successqq > li:hover {
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
 /*底部*/
 footer {

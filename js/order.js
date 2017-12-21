@@ -187,6 +187,7 @@ $(function() {
           dataType: "json",
           success: function(data) {
             console.log(data);
+            // console.log(3213);
             if (data.code == 1) {
               $(".modal-dialog").hide();
               $(".confirm").html("请 稍 后...");
@@ -299,11 +300,14 @@ $(function() {
                 }
               );
               // console.log(orderId);
-            } else {
+            } else if (data.code == 0) {
               $(".modal-dialog").hide();
+              // console.log(42342);
+              // $('.pays').html(data.msg)
               swal(
                 {
                   title: "订单提交失败!",
+                  text: data.msg,
                   confirmButtonColor: "#87C8E9",
                   confirmButtonText: "确 定",
                   closeOnConfirm: false
@@ -328,7 +332,7 @@ $(function() {
   function getActive() {
     var data = $(".calendar-box").calendarGetActive();
     // console.log(data);
-    console.log(data.price);
+    // console.log(data.price);
     $(".riqi").html(data.date);
     $(".pics").html(data.money);
     // $("#salePrice").html(data.money);
