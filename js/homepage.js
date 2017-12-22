@@ -4,7 +4,24 @@ $(function(jq) {
   if ((window.sessionStorage["id"] == undefined)) {
     window.location.href = "../index.html";
   }
-  
+  //搜索
+  $(".search").on('click',function () {
+    window.location.href = './search.html?keyWord=' + $('#keyWord').val()
+    
+    // $.ajax({
+    //   type: "get",
+    //   url: common_api + "/user/search.action?keyWord=" + keyWord,
+    //   dataType: "json",
+    //   success: function (data) {
+    //     console.log(data);
+    //     if(data.code==0){
+    //       // window.location.href = './search.html'
+    //       $('.more').html(data.msg)
+    //     }else {
+    //       // window.location.href='./search.html'
+    //     }
+    //   }})
+  })
   var imgs;
   //   轮播图
   $.ajax({
@@ -755,7 +772,6 @@ $(function(jq) {
     url: common_api + "/user/rimTravalView.action",
     dataType: "json",
     success: function(data) {
-      console.log(111111)
       console.log(data.data)
       var rimTraval_top='',
       rimTraval_bottom='';

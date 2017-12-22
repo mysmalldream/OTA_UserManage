@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>更多产品</title>
+    <link rel="shortcut icon" href="../imgs/ylt_favicon.ico" />
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="../lib/lunbotu/posterTvGrid.css">
+    <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="../lib/button/button.css">
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <header>
+        <div class="center clearfix">
+            <ul class="left fl">
+                <li>您好，欢迎来到易旅合创旅游网！</li>
+                <li>
+                    <a href="../index.html">登录</a> |&nbsp; </li>
+                <li>
+                    <a href="./login.html"> 注册</a>
+                </li>
+            </ul>
+            <ul class="right fr">
+                <li>
+                    <a href="./orderLists.html">我的订单</a></li>
+                <!-- <li>
+                    <a href="">微信</a> |&nbsp;</li>
+                <li>
+                    <a href="">客户服务</a>
+                </li> -->
+            </ul>
+        </div>
+    </header>
+    <!-- logo以及搜索区 -->
+        <nav>
+            <div class="top">
+                <img class="fl" src="../imgs/logo.png" alt="">
+                <!-- <form class="form" id="login" action="http://192.168.1.109:8080/TicketSales/user/search.action" method="post" enctype="multipart/form-data">
+                    <ul class="top_right fr">
+                        <li>
+                            <input type="text" name="wer" placeholder="请输入产品名称、目的地、景点">
+                            <button><span class="glyphicon glyphicon-search"> </span> 搜 索</button>
+                        </li>
+                    </ul>
+                </form> -->
+            </div>
+        </nav>
+        <div class="topics">
+            <div class="topics_nav">
+                <ul class="clearfix">
+                    <li>
+                        <a class="active" href="./homepage.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">景区介绍</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">周边旅游</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">帮助中心</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">平台公告</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">特供商品</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="special">
+                <div class="special_top2">
+                    <div class="tuijian">
+                        <i class="glyphicon glyphicon-chevron-right"></i> 景区更多产品
+                    </div>
+                </div>  
+        </div>  
+    <!-- 更多景区 -->
+    <div class="special">
+        <div class="special_top2">
+            <ul class="more">
+               <li>请稍后,正在疯狂加载中...</li>
+                <!-- <li class="clearfix">
+                    <img class="fl" data-original="../imgs/loading.gif" alt="">
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_center">
+            <h5>Copynight ©2017 西安陕西日报易旅通有限公司 yilvtong.com保留一切权利。客服热线:400-789-2000 陕ICP证140430号 陕ICP证14006215号</h5>
+        </div>
+    </footer>
+    <!-- <h2 id="h2">scroolTop Footer</h2> -->
+    <div id="up">
+        <span class="glyphicon glyphicon-arrow-up"></span>
+    </div>          
+    
+</body>
+<script src="../lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../lib/swiper/js/swiper.jquery.min.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/commonapi.js"></script>
+<script src="../lib/jquery.lazyload.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $("img").lazyload({
+            // placeholder: "img/grey.gif", //用图片提前占位
+            // placeholder,值为某一图片路径.此图片用来占据将要加载的图片的位置,待图片加载时,占位图则会隐藏
+            effect: "fadeIn", // 载入使用何种效果
+            // effect(特效),值有show(直接显示),fadeIn(淡入),slideDown(下拉)等,常用fadeIn
+            // threshold: 200, // 提前开始加载
+            // threshold,值为数字,代表页面高度.如设置为200,表示滚动条在离目标位置还有200的高度时就开始加载图片,可以做到不让用户察觉
+            // event: 'click',  // 事件触发时才加载
+            // event,值有click(点击),mouseover(鼠标划过),sporty(运动的),foobar(…).可以实现鼠标莫过或点击图片才开始加载,后两个值未测试…
+            container: $(".special_top2"),  // 对某容器中的图片实现效果
+            // container,值为某容器.lazyload默认在拉动浏览器滚动条时生效,这个参数可以让你在拉动某DIV的滚动条时依次加载其中的图片
+            // failurelimit: 10 // 图片排序混乱时
+            // failurelimit,值为数字.lazyload默认在找到第一张不在可见区域里的图片时则不再继续加载,但当HTML容器混乱的时候可能出现可见区域内图片并没加载出来的情况,failurelimit意在加载N张可见区域外的图片,以避免出现这个问题.
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $(window).scroll(function () {
+            var $scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//兼容浏览器
+            if ($scrollTop > 150) {//滚动高度可调，也可以为某个div的scrollTop，需要的可以自行修改
+                $("#up").show();
+            } else { $("#up").hide(); };
+        });
+        $("#up").click(function () {
+            $('body,html').animate({ scrollTop: 0 }, 500);
+            return false;
+        });
+    });
+</script>
+
+</html>
