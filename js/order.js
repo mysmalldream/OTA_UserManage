@@ -108,8 +108,41 @@ $(function() {
       });
       // 支付开始
       $(".pays").on("click", function() {
-        // console.log(111);
         // console.log($(".riqi").html());
+        // 订单使用日期的处理useDate
+        var newD1, newD2, newD3,newOrder;
+        newD1 = $(".riqi").html().split("-")[0];
+        newD2 = $(".riqi").html().split("-")[1];
+        newD3 = $(".riqi").html().split("-")[2];
+        if (parseInt(newD2)<10){
+          newD2 = "0" + newD2;
+        }else{
+          newD2;
+        }
+        if (parseInt(newD3) < 10) {
+          newD3 = "0" + newD3;
+        } else {
+          newD3;
+        }
+        newOrder = newD1 + '-' + newD2 + '-' + newD3;
+        console.log(newOrder);
+        //订单创建日期的处理createDate
+        var useD1, useD2, useD3, useOrder;
+        useD1 = new Date().getFullYear();
+        useD2 = new Date().getMonth() + 1;
+        useD3 = new Date().getDate();
+        if (useD2<10){
+          useD2 = '0' + useD2;
+        }else{
+          useD2;
+        }
+        if (useD3 < 10) {
+          useD3 = '0' + useD3;
+        } else {
+          useD3;
+        }
+        useOrder = useD1 + "-" + useD2 + "-" + useD3 ;
+        // 支付方式
         if ($("#zhifubao").is(":checked")) {
           ispay = "支付宝支付";
         } else {
@@ -165,15 +198,12 @@ $(function() {
             "&unitPrice=" +
             $(".pics").html() +
             "&createDate=" +
-            new Date().getFullYear() +
-            "-" +
-            (new Date().getMonth() + 1) +
-            "-" +
-            new Date().getDate() +
+            useOrder+
             "&price=" +
             $(".spinnerExample").val() * $(".pics").html() +
             "&useDate=" +
-            $(".riqi").html() +
+            // $(".riqi").html() +
+            newOrder +
             "&userPhone=" +
             $("#userPhone").val() +
             "&userName=" +
