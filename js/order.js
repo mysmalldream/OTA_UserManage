@@ -12,11 +12,11 @@ if (window.sessionStorage["id"] == undefined) {
 }
 
 var productId;
-$(function() {
+$(function () {
   $("#magnifier").magnifier(); //产品图片
   $(".spinnerExample").spinner({}); //预定人数
   // 日历
-  $(".select").on("click", function() {
+  $(".select").on("click", function () {
     $(".calendar-box")
       .stop(true, false)
       .slideToggle(500);
@@ -31,7 +31,7 @@ $(function() {
     type: "get",
     url: common_api + "/user/detailPro.action?id=" + GetQueryString("id"),
     dataType: "json",
-    success: function(data) {
+    success: function (data) {
       console.log(data.data);
       console.log(data.data.calendar[0].price);
       $(".viewRemark").html(data.data.viewRemark);
@@ -75,7 +75,7 @@ $(function() {
       $(".carousel-inner").html(lis);
       $(".carousel").carousel({ interval: 2000 });
       // 支付验证
-      $("#userName").on("change blur", function() {
+      $("#userName").on("change blur", function () {
         if ($("#userName").val().length == 0) {
           $(".fill1").html("姓名不能为空");
         } else {
@@ -83,7 +83,7 @@ $(function() {
         }
       });
 
-      $("#userPhone").on("change blur", function() {
+      $("#userPhone").on("change blur", function () {
         if ($("#userPhone").val().length == 0) {
           $(".fill2").html("手机号不能为空");
         } else {
@@ -91,7 +91,7 @@ $(function() {
         }
       });
 
-      $("#idCard").on("change blur", function() {
+      $("#idCard").on("change blur", function () {
         if ($("#idCard").val().length == 0) {
           $(".fill3").html("身份证号不能为空");
         } else {
@@ -99,7 +99,7 @@ $(function() {
         }
       });
 
-      $("#userPhone").on("change blur", function() {
+      $("#userPhone").on("change blur", function () {
         if ($("#userPhone").val().length == 0) {
           $(".fill1").html("姓名不能为空");
         } else {
@@ -107,16 +107,16 @@ $(function() {
         }
       });
       // 支付开始
-      $(".pays").on("click", function() {
+      $(".pays").on("click", function () {
         // console.log($(".riqi").html());
         // 订单使用日期的处理useDate
-        var newD1, newD2, newD3,newOrder;
+        var newD1, newD2, newD3, newOrder;
         newD1 = $(".riqi").html().split("-")[0];
         newD2 = $(".riqi").html().split("-")[1];
         newD3 = $(".riqi").html().split("-")[2];
-        if (parseInt(newD2)<10){
+        if (parseInt(newD2) < 10) {
           newD2 = "0" + newD2;
-        }else{
+        } else {
           newD2;
         }
         if (parseInt(newD3) < 10) {
@@ -131,9 +131,9 @@ $(function() {
         useD1 = new Date().getFullYear();
         useD2 = new Date().getMonth() + 1;
         useD3 = new Date().getDate();
-        if (useD2<10){
+        if (useD2 < 10) {
           useD2 = '0' + useD2;
-        }else{
+        } else {
           useD2;
         }
         if (useD3 < 10) {
@@ -141,7 +141,7 @@ $(function() {
         } else {
           useD3;
         }
-        useOrder = useD1 + "-" + useD2 + "-" + useD3 ;
+        useOrder = useD1 + "-" + useD2 + "-" + useD3;
         // 支付方式
         if ($("#zhifubao").is(":checked")) {
           ispay = "支付宝支付";
@@ -173,6 +173,10 @@ $(function() {
           this.second;
         var orderId = currentTime + Math.floor(Math.random() * 1000000000);
         $('.pays').html('请 稍 后...')
+        // console.log(parseFloat($(".spinnerExample").val()));
+        // console.log(parseFloat($(".pics").html()));
+        // console.log(($(".spinnerExample").val() * $(".pics").html()).toFixed(1));
+
         $.ajax({
           type: "get",
           url:
@@ -198,9 +202,10 @@ $(function() {
             "&unitPrice=" +
             $(".pics").html() +
             "&createDate=" +
-            useOrder+
+            useOrder +
             "&price=" +
-            $(".spinnerExample").val() * $(".pics").html() +
+            ($(".spinnerExample").val() * $(".pics").html()).toFixed(1) +
+            // $(".spinnerExample").val() * $(".pics").html() +
             "&useDate=" +
             // $(".riqi").html() +
             newOrder +
@@ -215,7 +220,7 @@ $(function() {
             "&userId=" +
             window.sessionStorage["id"],
           dataType: "json",
-          success: function(data) {
+          success: function (data) {
             console.log(data);
             // console.log(3213);
             if (data.code == 1) {
@@ -232,7 +237,7 @@ $(function() {
                   closeOnConfirm: false,
                   imageUrl: data.path
                 },
-                function() {
+                function () {
                   //支付宝
                   if (data.isPay == "支付宝支付") {
                     $.ajax({
@@ -241,7 +246,7 @@ $(function() {
                         common_api +
                         "/alipayQueryServlet?out_trade_no=" +
                         orderId,
-                      success: function(data) {
+                      success: function (data) {
                         console.log(data);
                         if (data.code == 1) {
                           swal(
@@ -251,7 +256,7 @@ $(function() {
                               confirmButtonText: "确 定",
                               closeOnConfirm: false
                             },
-                            function() {
+                            function () {
                               $(".in").removeClass("modal-backdrop");
                               // $("#myModal").hide();
                               $(".sweet-alert").hide();
@@ -268,7 +273,7 @@ $(function() {
                               confirmButtonText: "确 定",
                               closeOnConfirm: false
                             },
-                            function() {
+                            function () {
                               $(".in").removeClass("modal-backdrop");
                               $(".sweet-alert").hide();
                               $(".sweet-overlay").hide();
@@ -287,7 +292,7 @@ $(function() {
                         common_api +
                         "/queryServlet?out_trade_no=" +
                         orderId,
-                      success: function(data) {
+                      success: function (data) {
                         console.log(data);
                         if (data.code == 1) {
                           swal(
@@ -297,7 +302,7 @@ $(function() {
                               confirmButtonText: "确 定",
                               closeOnConfirm: false
                             },
-                            function() {
+                            function () {
                               $(".in").removeClass("modal-backdrop");
                               // $("#myModal").hide();
                               $(".sweet-alert").hide();
@@ -315,7 +320,7 @@ $(function() {
                               confirmButtonText: "确 定",
                               closeOnConfirm: false
                             },
-                            function() {
+                            function () {
                               $(".in").removeClass("modal-backdrop");
                               $(".sweet-alert").hide();
                               $(".sweet-overlay").hide();
@@ -342,7 +347,7 @@ $(function() {
                   confirmButtonText: "确 定",
                   closeOnConfirm: false
                 },
-                function() {
+                function () {
                   window.location.href = window.location.href;
                 }
               );
@@ -352,10 +357,10 @@ $(function() {
       });
     }
   });
-  $(".watch").on("click", function() {
+  $(".watch").on("click", function () {
     getActive();
   });
-  $(".zhifu").on("click", function() {
+  $(".zhifu").on("click", function () {
     getActive();
   });
   // 出发日期
@@ -367,4 +372,5 @@ $(function() {
     $(".pics").html(data.money);
     // $("#salePrice").html(data.money);
   }
+
 });

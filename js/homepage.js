@@ -610,7 +610,7 @@ $(function(jq) {
         }
       };
 
-      posterTvGrid.options = {
+      posterTvGrid.options = {   //轮播图参数
         offsetPages: 3, //默认可视最大条数
         direct: "left", //滚动的方向
         initPage: 1, //默认当前显示第几条
