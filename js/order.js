@@ -13,6 +13,14 @@ if (window.sessionStorage["id"] == undefined) {
 
 var productId;
 $(function () {
+  //退出
+  $('#names').html(window.sessionStorage.getItem("userName"))
+  $('#back').on('click', function () {
+    window.sessionStorage.removeItem("userName")
+    window.location.href = '../index.html';
+  })
+
+  
   $("#magnifier").magnifier(); //产品图片
   $(".spinnerExample").spinner({}); //预定人数
   // 日历

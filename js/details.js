@@ -9,8 +9,14 @@ function GetQueryString(name) {
 if (window.sessionStorage["id"] == undefined) {
   window.location.href = "../index.html";
 }
+
 $(function() {
-  // 搜索显示更多景区
+    //退出
+  $('#names').html(window.sessionStorage.getItem("userName"))
+  $('#back').on('click', function () {
+    window.sessionStorage.removeItem("userName")
+    window.location.href = '../index.html';
+  })
   
   // 点击显示更多景区
   $.ajax({

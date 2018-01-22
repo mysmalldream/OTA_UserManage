@@ -12,7 +12,7 @@ header .center a {
   color: #fff;
 }
 header .center a:hover {
-  color: red;
+  color: #fff;
 }
 header .center .left {
   line-height: 40px;

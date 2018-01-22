@@ -11,6 +11,13 @@ var numbers = GetQueryString("nameId");
     window.location.href = "../index.html";
   }
 $(function() {
+  //退出
+  $('#names').html(window.sessionStorage.getItem("userName"))
+  $('#back').on('click', function () {
+    window.sessionStorage.removeItem("userName")
+    window.location.href = '../index.html';
+  })
+
   var urls = "";
   if (numbers == 1) {
     urls = "expeciallyView";

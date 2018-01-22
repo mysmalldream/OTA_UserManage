@@ -11,6 +11,13 @@ if (window.sessionStorage["id"] == undefined) {
   window.location.href = "../index.html";
 }
 $(function() {
+  //退出
+  $('#names').html(window.sessionStorage.getItem("userName"))
+  $('#back').on('click', function () {
+    window.sessionStorage.removeItem("userName")
+    window.location.href = '../index.html';
+  })
+  
   // 已支付
   $.ajax({
     type: "get",

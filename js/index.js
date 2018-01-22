@@ -24,9 +24,10 @@ $(function() {
       success: function(data) {
         console.log(data);
         if (data.code === 1) {
-          // alert("恭喜,登陆成功,点击确定去往首页页面~");
-          // console.log(data.data.id)
+          // alert("恭喜,登陆成功,点击确定去往首页页面~"); userName
+          // console.log(data.data)
           window.sessionStorage["id"] = JSON.stringify(data.data.id);
+          window.sessionStorage["userName"] = (data.data.userName);
           window.location.href = "./page/homepage.html";
         } else {
           $(".tijiao").html("用户名或密码错误");

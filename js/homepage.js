@@ -4,6 +4,12 @@ $(function(jq) {
   if ((window.sessionStorage["id"] == undefined)) {
     window.location.href = "../index.html";
   }
+  // console.log(window.sessionStorage.getItem("userName"));
+  $('#names').html(window.sessionStorage.getItem("userName"))
+  $('#back').on('click',function () {
+    window.sessionStorage.removeItem("userName")
+    window.location.href = '../index.html';
+  })
   //搜索
   $(".search").on('click',function () {
     window.location.href = './search.html?keyWord=' + $('#keyWord').val()

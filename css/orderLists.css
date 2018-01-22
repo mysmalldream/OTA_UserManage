@@ -13,7 +13,7 @@ header .center a {
   color: #fff;
 }
 header .center a:hover {
-  color: red;
+  color: #fff;
 }
 header .center .left li {
   float: left;
