@@ -8,7 +8,7 @@ $(function() {
       type: "get",
       url:
         common_api +
-        "custom/checkUserName.action?userName=" +
+        "/custom/checkUserName.action?userName=" +
         $("#userName").val(),
       dataType: "json",
       success: function(data) {
@@ -37,8 +37,10 @@ $(function() {
     }
   });
   $("#mobilePhone").on("change blur", function() {
-    if ($("#mobilePhone").val() == "") {
-      $(".mobilePhone").html("✘ 此项不能为空");
+    var pattern = /^1[3|4|5|7|8][0-9]\d{8}$/;
+    if (!pattern.test($("#mobilePhone").val())) {
+      $(".mobilePhone").html("手机号格式不合法");
+      $("#mobilePhone").val('');
     } else {
       $(".mobilePhone").html("");
     }
@@ -86,8 +88,10 @@ $(function() {
     }
   });
   $("#phone").on("change blur", function() {
-    if ($("#phone").val() == "") {
-      $(".phone").html("✘ 此项不能为空");
+    var pattern = /^1[3|4|5|7|8][0-9]\d{8}$/;
+    if (!pattern.test($("#phone").val())) {
+      $(".phone").html("手机号格式不合法");
+      $("#phone").val('');
     } else {
       $(".phone").html("");
     }

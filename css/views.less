@@ -109,8 +109,10 @@
             width: 70%;
             margin: 0 auto;
             .tuijian {
-                font-size: 20px;
-                color: rgb(255, 94, 0);
+                a {
+                    font-size: 20px;
+                    color: rgb(255, 94, 0);
+                }
             }
             .content {
                 ul {
@@ -120,37 +122,46 @@
                         a {
                             img {
                                 width: 95%;
-                                -webkit-transform:scale(1.0); /*Webkit: Scale down image to 0.8x original size*/
-                                -moz-transform:scale(1.0); /*Mozilla scale version*/
-                                -o-transform:scale(1.0); /*Opera scale version*/
-                                -webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
-                                -moz-transition-duration: 0.5s; /*Mozilla duration version*/
-                                -o-transition-duration: 0.5s; /*Opera duration version*/
-                                opacity: 0.8; /*initial opacity of images*/
+                                -webkit-transform: scale(1.0);
+                                /*Webkit: Scale down image to 0.8x original size*/
+                                -moz-transform: scale(1.0);
+                                /*Mozilla scale version*/
+                                -o-transform: scale(1.0);
+                                /*Opera scale version*/
+                                -webkit-transition-duration: 0.5s;
+                                /*Webkit: Animation duration*/
+                                -moz-transition-duration: 0.5s;
+                                /*Mozilla duration version*/
+                                -o-transition-duration: 0.5s;
+                                /*Opera duration version*/
+                                opacity: 1.0;
+                                /*initial opacity of images*/
                                 border-radius: 8px;
                             }
-                            img:hover{
-                                -webkit-transform:scale(1.1); /*Webkit: Scale up image to 1.2x original size*/
-                                -moz-transform:scale(1.1); /*Mozilla scale version*/
-                                -o-transform:scale(1.1); /*Opera scale version*/
-                                box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-                                -webkit-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-                                -moz-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-                                -ms-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-                                -o-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+                            img:hover {
+                                -webkit-transform: scale(1.05);
+                                /*Webkit: Scale up image to 1.2x original size*/
+                                -moz-transform: scale(1.05);
+                                /*Mozilla scale version*/
+                                -o-transform: scale(1.05);
+                                /*Opera scale version*/
+                                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                                -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                                -moz-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                                -ms-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                                -o-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
                                 opacity: 1;
                             }
                         }
-                        p{
+                        p {
                             line-height: 40px;
                             height: 40px;
                             text-align: center;
                         }
                     }
-                    li:nth-child(3n-1){
+                    li:nth-child(3n-1) {
                         // margin: 0 5px;
                     }
-                    
                 }
             }
         }

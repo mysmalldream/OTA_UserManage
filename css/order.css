@@ -135,7 +135,7 @@ nav .top .top_right li:nth-child(1) {
 }
 .special .special_top2 .order_right .price_top h3,
 .special .special_top2 .order_right .price_top h4 {
-  margin-top: 2%;
+  margin-top: 4%;
 }
 .special .special_top2 .order_right .price_top em,
 .special .special_top2 .order_right .price_top del {
@@ -203,7 +203,6 @@ nav .top .top_right li:nth-child(1) {
 }
 .special .special_top2 .small-box {
   width: 100%;
-  margin-bottom: 20px;
 }
 .special .special_top2 .small-box img {
   width: 100%;
@@ -256,8 +255,8 @@ nav .top .top_right li:nth-child(1) {
   color: red;
 }
 .custom {
-  width: 120px !important;
-  height: 120px !important;
+  width: 150px !important;
+  height: 150px !important;
   background-size: 100%;
 }
 /*推荐理由*/

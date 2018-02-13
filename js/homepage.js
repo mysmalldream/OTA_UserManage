@@ -10,6 +10,39 @@ $(function(jq) {
     window.sessionStorage.removeItem("userName")
     window.location.href = '../index.html';
   })
+  //搜索下拉模糊匹配
+  $("#keyWord").on('keyup',function () {
+    // console.log($('#keyWord').val())
+    var lis='',lens;
+    $.ajax({
+      type: "get",
+      url:
+        common_api +
+        "/user/search.action?keyWord=" +
+        $("#keyWord").val(),
+      dataType: "json",
+      success: function (data) {
+        // console.log(data);
+        if (data.code == 0) {
+          // console.log(111);
+        } else {
+          if (data.data.length>=5){
+            lens=5;
+          }else{
+            lens = data.data.length;  
+          }
+          for (var i = 0; i < lens;i++){
+            lis +='<li>'+data.data[i].name+'</li>';
+          }
+          $('.sels').html(lis);
+        }
+        $('.sels>li').click(function () {
+            // console.log($(this).html());
+          $('#keyWord').val($(this).html());
+        })
+      }
+    });
+  });
   //搜索
   $(".search").on('click',function () {
     window.location.href = './search.html?keyWord=' + $('#keyWord').val()

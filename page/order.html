@@ -41,7 +41,9 @@
     <!-- logo以及搜索区 -->
     <nav class="clearfix">
         <div class="top clearfix">
-            <img class="fl" src="../imgs/logo.png" alt="">
+            <a href="./homepage.html">
+                <img class="fl" src="../imgs/logo.png" alt="" title="回到首页">
+            </a>
             <!-- <form action="">
                 <ul class="top_right fr">
                     <li>
@@ -92,7 +94,7 @@
             <!-- <p>景区介绍>特别推荐>
                 <span>西安兵马俑一日游</span>
             </p> -->
-            <h3>世界奇迹:西安兵马俑一日游</h3>
+            <h3>加载中...</h3>
         </div>
     </div>
     <div class="special">
@@ -109,7 +111,7 @@
                                 <img src="../imgs/big_2.jpg" alt="...">
                             </div> -->
                         </div>
-                    
+
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -146,8 +148,10 @@
                 <div class="price_top">
                     <h3>
                         <em>销 售 价 :</em>
-                        <span class="yell" id='salePrice'>0</span> 元/人/次</h3>
-                    <h4 class="yuan">
+                        <b style="font-weight:900;">¥</b>
+                        <span class="yell" id='salePrice'>0</span>
+                    </h3>
+                    <h4 class="yuan1">
                         <del>
                             <em>门 市 价 :</em>
                             <i id='marketPrice'>0</i>元
@@ -156,12 +160,17 @@
                     <h4>
                         <em>出 发 日 期 :</em>
                         <a href="javascript:;" class="button button-tiny button-action button-pill select" style='background-color:#2F8FD8;'>---请 选 择---</a>
-                        <a href="javascript:;" class="watch button button-pill button-tiny">查看出发日期</a>您的出发日期为:
-                        <span class="riqi"></span>
+                        <!-- <a href="javascript:;" class="watch button button-pill button-tiny">查看出发日期</a> -->
                     </h4>
                     <h4>
-                        <em>有 效 期 开 始 : </em> <span class="startTime"></span>
-                        <em>有 效 期 结 束 : </em> <span class="endTime"></span>
+                        <em> 您的出发日期为:</em>
+                        <b class="riqi" style="font-weight:900;"></b>
+                    </h4>
+                    <h4>
+                        <em>有 效 期 开 始 : </em>
+                        <span class="startTime"></span>
+                        <em>有 效 期 结 束 : </em>
+                        <span class="endTime"></span>
                     </h4>
                     <div class="calendar-box demo-box"></div>
                     </h4>
@@ -172,7 +181,7 @@
                             <em>人</em>
                         </h4>
                         <h3 class="once">
-                            <span data-toggle="modal" data-target="#myModal" class="zhifu button button-glow button-border button-rounded button-primary">立即预定</span> 
+                            <span data-toggle="modal" data-target="#myModal" class="zhifu button button-glow button-border button-rounded button-primary">立即购买</span>
                             <!-- 弹窗 -->
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
@@ -187,34 +196,41 @@
                                             <form action="" class="tijiaoOrder">
                                                 <div class="form-group">
                                                     <label for="recipient-name" class="control-label" style='color:red;'>请牢记您的出发日期为:</label>
-                                                    <div data-dismiss="modal" class="button button-rounded button-tiny riqi" style='color:red;'>请返回选择</div> 单价为: <span class='pics'></span> 元/人/次
+                                                    <div data-dismiss="modal" class="button button-rounded button-tiny riqi" style='color:red;'>请返回选择</div> 单价为:
+                                                    <span class='pics'></span> 元
                                                 </div>
                                                 <div class="form-group">
-                                                    <span class="name">*</span> <label for="recipient-name" class="control-label">姓 名   :</label> &nbsp;<span class="fill1" style='color:red;font-size:12px;'></span>
+                                                    <span class="name">*</span>
+                                                    <label for="recipient-name" class="control-label">姓 名 :</label> &nbsp;
+                                                    <span class="fill1" style='color:red;font-size:12px;'></span>
                                                     <input type="text" class="form-control" id="userName" name='userName' placeholder="请输入您的姓名">
                                                 </div>
                                                 <div class="form-group">
-                                                    <span class="name">*</span> <label for="message-text" class="control-label">手 机 号 码  :</label> &nbsp;<span class="fill2" style='color:red;font-size:12px;'></span>
-                                                    <input type="number" class="form-control" id="userPhone" name='userPhone' placeholder="请输入您的11位手机号码">
+                                                    <span class="name">*</span>
+                                                    <label for="message-text" class="control-label">手 机 号 码 :</label> &nbsp;
+                                                    <span class="fill2" style='color:red;font-size:12px;'></span>
+                                                    <input type="number" class="form-control" id="userPhone"   name='userPhone' placeholder="请输入您的11位手机号码">
                                                 </div>
                                                 <div class="form-group">
-                                                    <span class="name">*</span> <label for="message-text" class="control-label">身 份 证 号 码 :</label> &nbsp;<span class="fill3" style='color:red;font-size:12px;'></span>
+                                                    <span class="name">*</span>
+                                                    <label for="message-text" class="control-label">身 份 证 号 码 :</label> &nbsp;
+                                                    <span class="fill3" style='color:red;font-size:12px;'></span>
                                                     <input type="text" class="form-control" id="idCard" name='idCard' placeholder="请输入您的18位身份证号码">
                                                 </div>
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <label for="message-text" class="control-label"> 备 注 :</label>
                                                     <textarea class="form-control" id="remark" name='remark' placeholder="请填写备注信息(选填)"></textarea>
-                                                </div>
+                                                </div> -->
                                                 <div class="form-group">
                                                     <label for="message-text" class="control-label"> 支付方式 :</label>
                                                     <label>
-                                                        <input type="radio" name="ways" id="zhifubao" value=""  checked> 支付宝支付
+                                                        <input type="radio" name="ways" id="zhifubao" value="" checked> 支付宝支付
                                                     </label>
                                                     <label>
-                                                        <input type="radio" name="ways" id="weixin" value="" > 微信支付
+                                                        <input type="radio" name="ways" id="weixin" value=""> 微信支付
                                                     </label>
                                                 </div>
-                                                <div style='color:red;font-size:12px;'>★为了您能有一个美好的行程,请确保以上信息真实有效!★</div>
+                                                <!-- <div style='color:red;font-size:12px;'>★为了您能有一个美好的行程,请确保以上信息真实有效!★</div> -->
                                             </form>
                                         </div>
                                         <div class="modal-footer">
@@ -223,8 +239,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </h4>
-                        <div class="agree fr">
+                            </h4>
+                            <!-- <div class="agree fr">
                             <div class="custom">客户满意度
                                 <h1>
                                     <i>99</i>%
@@ -233,7 +249,7 @@
                                     <span>66</span>人点赞
                                 </p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -297,17 +313,19 @@
                 <span>景点介绍</span>
                 <ul class="views">
                     <li class="viewRemark">
-                        
+
                     </li>
                 </ul>
                 <i class="glyphicon glyphicon-road"></i>
                 <span>费用说明</span>
                 <ul class="views">
                     <li class="">
-                        【费用包含】<em class="costInside"></em> 
+                        【费用包含】
+                        <em class="costInside"></em>
                     </li>
                     <li class="">
-                        【费用不包含】<em class="costOutside"></em>
+                        【费用不包含】
+                        <em class="costOutside"></em>
                     </li>
 
                 </ul>
@@ -320,16 +338,16 @@
                 </ul>
             </div>
         </div>
-    <footer>
-        <div class="footer_center">
-            <h5>© 2016 陕西日报易旅合创文化传媒有限公司 服务热线：02982267666 陕ICP备16018386号 服务热线：02982267666 陕ICP备16018386号 </h5>
-        </div>
-    </footer>
+        <footer>
+            <div class="footer_center">
+                <h5>© 2016 陕西日报易旅合创文化传媒有限公司 服务热线：02982267666 陕ICP备16018386号 服务热线：02982267666 陕ICP备16018386号 </h5>
+            </div>
+        </footer>
 </body>
 <script src="../lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
 <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="../lib/swiper/js/swiper.jquery.min.js"></script>
-<script src="../lib/magnifier.js"></script>    
+<script src="../lib/magnifier.js"></script>
 <script src="../lib/number/js/jquery.spinner.js"></script>
 <script src="../lib/calendar/js/calendar-pro.js"></script>
 <script src="../js/order.js"></script>

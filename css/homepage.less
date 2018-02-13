@@ -36,12 +36,14 @@ nav {
     .top {
         width: 80%;
         margin: 0 auto;
+        position: relative;
         .top_right {
-            li {
+            >.sousou {
                 float: left;
                 margin-top: 10px;
                 margin-right: 10px;
                 height: 42px;
+                border: 2px solid @color2;
                 input,
                 select {
                     height: 39px;
@@ -66,8 +68,24 @@ nav {
                     font-size: 16px;
                 }
             }
-            li:nth-child(1) {
-                border: 2px solid @color2; // width: 300px;
+        }
+        .sels {
+            position: absolute;
+            top: 54px;
+            right: 91px;
+            width: 300px;
+            z-index: 10000;
+            >li {
+                background: #fff;
+                text-indent: 5px;
+                line-height: 25px;
+                curosr: pointer;
+            }
+            >li:hover {
+                background: rgb(243, 240, 240);
+                text-indent: 5px;
+                line-height: 25px;
+                curosr: pointer;
             }
         }
     }
@@ -229,7 +247,7 @@ nav {
                     transition: all 0.6s;
                 }
                 img:hover {
-                    transform: scale(1.1);
+                    transform: scale(1.05);
                 }
                 h5 {
                     color: #000;

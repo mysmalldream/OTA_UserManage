@@ -28,27 +28,29 @@ nav {
 nav .top {
   width: 80%;
   margin: 0 auto;
+  position: relative;
 }
-nav .top .top_right li {
+nav .top .top_right > .sousou {
   float: left;
   margin-top: 10px;
   margin-right: 10px;
   height: 42px;
+  border: 2px solid #0094E8;
 }
-nav .top .top_right li input,
-nav .top .top_right li select {
+nav .top .top_right > .sousou input,
+nav .top .top_right > .sousou select {
   height: 39px;
   float: left;
   border-bottom: 1px solid #0094E8;
 }
-nav .top .top_right li input {
+nav .top .top_right > .sousou input {
   width: 300px;
   text-indent: 5px;
 }
-nav .top .top_right li select {
+nav .top .top_right > .sousou select {
   background-color: #F2FBFF;
 }
-nav .top .top_right li button {
+nav .top .top_right > .sousou button {
   height: 39px;
   float: left;
   width: 80px;
@@ -57,8 +59,24 @@ nav .top .top_right li button {
   color: #fff;
   font-size: 16px;
 }
-nav .top .top_right li:nth-child(1) {
-  border: 2px solid #0094E8;
+nav .top .sels {
+  position: absolute;
+  top: 54px;
+  right: 91px;
+  width: 300px;
+  z-index: 10000;
+}
+nav .top .sels > li {
+  background: #fff;
+  text-indent: 5px;
+  line-height: 25px;
+  curosr: pointer;
+}
+nav .top .sels > li:hover {
+  background: #f3f0f0;
+  text-indent: 5px;
+  line-height: 25px;
+  curosr: pointer;
 }
 .topics {
   background-color: #0094E8;
@@ -212,7 +230,7 @@ nav .top .top_right li:nth-child(1) {
   transition: all 0.6s;
 }
 .special .special_top2 ul li img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .special .special_top2 ul li h5 {
   color: #000;
